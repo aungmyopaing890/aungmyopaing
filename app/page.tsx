@@ -408,9 +408,8 @@ export default function FlutterPortfolio() {
                           <button
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                              index === currentImageIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
-                            }`}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentImageIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
+                              }`}
                           />
                         ))}
                       </div>
@@ -424,11 +423,10 @@ export default function FlutterPortfolio() {
                         <button
                           key={index}
                           onClick={() => setCurrentImageIndex(index)}
-                          className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 hover:scale-105 ${
-                            index === currentImageIndex
-                              ? "border-blue-500 shadow-lg shadow-blue-500/25"
-                              : "border-gray-200 dark:border-gray-700 hover:border-blue-300"
-                          }`}
+                          className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 hover:scale-105 ${index === currentImageIndex
+                            ? "border-blue-500 shadow-lg shadow-blue-500/25"
+                            : "border-gray-200 dark:border-gray-700 hover:border-blue-300"
+                            }`}
                         >
                           <img
                             src={image || "/placeholder.svg"}
@@ -472,7 +470,7 @@ export default function FlutterPortfolio() {
                       ))}
                     </div>
                   </div>
-
+                  {/* scrollToSection(item.id) */}
                   {/* Action Buttons */}
                   <div className="space-y-4 animate-fade-in-up animate-stagger-2">
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
@@ -535,9 +533,8 @@ export default function FlutterPortfolio() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 ${
-                    activeSection === item.id ? "text-blue-600 dark:text-blue-400" : "text-gray-700 dark:text-gray-300"
-                  } animate-fade-in-down`}
+                  className={`text-sm font-medium transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 ${activeSection === item.id ? "text-blue-600 dark:text-blue-400" : "text-gray-700 dark:text-gray-300"
+                    } animate-fade-in-down`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {item.label}
@@ -577,11 +574,10 @@ export default function FlutterPortfolio() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:scale-105 animate-fade-in ${
-                    activeSection === item.id
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
-                      : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
-                  }`}
+                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:scale-105 animate-fade-in ${activeSection === item.id
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
+                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                    }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {item.label}
@@ -612,14 +608,17 @@ export default function FlutterPortfolio() {
             {/* Profile Image */}
             <div className="mb-8 animate-bounce-in">
               <img
-                src="/placeholder.svg?height=200&width=200"
+                src="/profile.png?height=200&width=200"
                 alt="Aung Myo Paing - Flutter Developer"
                 className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full mx-auto border-4 border-white dark:border-gray-700 shadow-xl object-cover hover:scale-110 transition-transform duration-500 glow"
               />
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
+            <h2 className="text-xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 dark:text-white mb-4 animate-fade-in-up">
+              {"<Aung Myo Paing />"}
+            </h2>
+            <h1 className="text-3xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
               Senior Flutter
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 animate-gradient bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient">
                 {" "}
                 Developer
               </span>
@@ -629,17 +628,39 @@ export default function FlutterPortfolio() {
               integrations
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up animate-stagger-2">
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg hover-lift button-press glow"
+              <a
+                href="https://www.linkedin.com/in/aungmyo-paing-080160148/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Hire Me
-                <ChevronDown className="ml-2 h-5 w-5 animate-bounce" />
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg hover-lift button-press">
+                <Button
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg hover-lift button-press glow"
+                >
+                  <Linkedin className="h-3 w-3 mr-1" />
+                  Hire Me
+                  <ChevronDown className="ml-2 h-5 w-5 animate-bounce" />
+                </Button>
+              </a>
+
+              <Button variant="outline" onClick={() => scrollToSection("projects")}
+                size="lg" className="px-8 py-3 text-lg hover-lift button-press">
                 View Projects
                 <ExternalLink className="ml-2 h-5 w-5" />
               </Button>
+
+              <a
+                href="https://github.com/aungmyopaing890"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" onClick={() => scrollToSection("projects")}
+                  size="lg" className="px-8 py-3 text-lg hover-lift button-press">
+                  <Github className="h-3 w-3 mr-1" />
+                  GitHub Profile
+                </Button>
+              </a>
+
             </div>
             <div className="flex justify-center space-x-8 text-gray-600 dark:text-gray-400 animate-fade-in-up animate-stagger-3">
               <div className="flex items-center hover:scale-110 transition-transform duration-300">
@@ -673,13 +694,13 @@ export default function FlutterPortfolio() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className={`${visibleElements.has("about") ? "animate-slide-in-left" : "opacity-0"}`}>
               {/* Large Profile Image for About Section */}
-              <div className="flex justify-center lg:justify-start mb-8">
+              {/* <div className="flex justify-center lg:justify-start mb-8">
                 <img
                   src="/placeholder.svg?height=300&width=300"
                   alt="Aung Myo Paing - Senior Flutter Developer"
                   className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl shadow-2xl object-cover border-4 border-gray-200 dark:border-gray-700 hover:scale-105 transition-transform duration-500 hover:rotate-2"
                 />
-              </div>
+              </div> */}
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Senior Flutter Developer</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 With over 4 years of experience building cross-platform applications for startups and enterprises, I
@@ -775,9 +796,8 @@ export default function FlutterPortfolio() {
               .map((project, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-xl transition-all duration-500 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer hover-lift hover:scale-105 ${
-                    visibleElements.has("projects") ? "animate-fade-in-up" : "opacity-0"
-                  }`}
+                  className={`group hover:shadow-xl transition-all duration-500 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer hover-lift hover:scale-105 ${visibleElements.has("projects") ? "animate-fade-in-up" : "opacity-0"
+                    }`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                   onClick={() => openProjectModal(project)}
                 >
@@ -867,9 +887,8 @@ export default function FlutterPortfolio() {
                   .map((project, index) => (
                     <Card
                       key={index}
-                      className={`group hover:shadow-xl transition-all duration-500 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 overflow-hidden flex-shrink-0 w-80 cursor-pointer hover-lift hover:scale-105 ${
-                        visibleElements.has("projects") ? "animate-slide-in-right" : "opacity-0"
-                      }`}
+                      className={`group hover:shadow-xl transition-all duration-500 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 overflow-hidden flex-shrink-0 w-80 cursor-pointer hover-lift hover:scale-105 ${visibleElements.has("projects") ? "animate-slide-in-right" : "opacity-0"
+                        }`}
                       style={{ scrollSnapAlign: "start", animationDelay: `${index * 0.1}s` }}
                       onClick={() => openProjectModal(project)}
                     >
@@ -1039,9 +1058,8 @@ export default function FlutterPortfolio() {
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                className={`bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift hover:scale-105 transition-all duration-500 ${
-                  visibleElements.has("testimonials") ? "animate-fade-in-up" : "opacity-0"
-                }`}
+                className={`bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift hover:scale-105 transition-all duration-500 ${visibleElements.has("testimonials") ? "animate-fade-in-up" : "opacity-0"
+                  }`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <CardContent className="p-6">
