@@ -34,7 +34,21 @@ export default function FlutterPortfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
   const [isDarkMode, setIsDarkMode] = useState(true) // Default to dark
-  const [selectedProject, setSelectedProject] = useState(null)
+  type Project = {
+    title: string
+    description: string
+    longDescription: string
+    techStack?: string[]
+    image: string
+    images: string[]
+    website?: string
+    github?: string
+    playStore?: string
+    appStore?: string
+    featured: boolean
+  }
+
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isModalClosing, setIsModalClosing] = useState(false)
   const [visibleElements, setVisibleElements] = useState(new Set())
@@ -171,146 +185,146 @@ export default function FlutterPortfolio() {
     { name: "Testing", level: 88 },
   ]
 
-  const projects = [
-    {
-      title: "E-Commerce Mobile App",
-      description: "Full-featured shopping app with payment integration, real-time notifications, and offline support.",
-      longDescription:
-        "A comprehensive e-commerce solution built with Flutter that provides seamless shopping experience across iOS and Android platforms. Features include secure payment processing with Stripe, real-time push notifications, offline cart functionality, and advanced product filtering. The app handles thousands of products with optimized performance and includes admin dashboard for inventory management.",
-      techStack: ["Flutter", "Firebase", "Stripe", "Riverpod"],
-      image: "/placeholder.svg?height=200&width=300",
-      images: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
-      github: "https://github.com/username/ecommerce-app",
-      playStore: "https://play.google.com/store/apps/details?id=com.example.ecommerce",
-      appStore: "https://apps.apple.com/app/ecommerce-app/id123456789",
-      featured: true,
-    },
-    {
-      title: "Healthcare Management System",
-      description: "Patient management app with appointment scheduling, medical records, and telemedicine features.",
-      longDescription:
-        "A comprehensive healthcare management platform that streamlines patient care and medical practice operations. Built with Flutter and GraphQL, it features secure patient data management, appointment scheduling with calendar integration, telemedicine video consultations using WebRTC, prescription management, and medical history tracking. The app ensures HIPAA compliance and includes role-based access for doctors, nurses, and patients.",
-      techStack: ["Flutter", "GraphQL", "BLoC", "WebRTC"],
-      image: "/placeholder.svg?height=200&width=300",
-      images: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
-      github: "https://github.com/username/healthcare-app",
-      playStore: "https://play.google.com/store/apps/details?id=com.example.healthcare",
-      appStore: "https://apps.apple.com/app/healthcare-app/id123456789",
-      featured: true,
-    },
-    {
-      title: "Social Media Platform",
-      description:
-        "Instagram-like social platform with real-time messaging, story features, and advanced media handling.",
-      longDescription:
-        "A modern social media platform inspired by Instagram, built entirely with Flutter. Features include photo and video sharing with advanced filters, real-time messaging system, story functionality with 24-hour expiration, live streaming capabilities, and social interactions like likes, comments, and follows. The app uses Firebase for backend services and FFmpeg for media processing, supporting millions of users with optimized performance.",
-      techStack: ["Flutter", "Firebase", "GetX", "FFmpeg"],
-      image: "/placeholder.svg?height=200&width=300",
-      images: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
-      github: "https://github.com/username/social-app",
-      playStore: "https://play.google.com/store/apps/details?id=com.example.social",
-      appStore: "https://apps.apple.com/app/social-app/id123456789",
-      featured: true,
-    },
-    {
-      title: "Fintech Trading App",
-      description:
-        "Real-time stock trading platform with advanced charts, portfolio management, and secure transactions.",
-      longDescription:
-        "A sophisticated financial trading application that provides real-time market data, advanced charting tools, and secure trading capabilities. Built with Flutter and WebSocket connections for live data feeds, the app features portfolio management, risk analysis, technical indicators, watchlists, and secure transaction processing. Includes biometric authentication, two-factor authentication, and bank-level security measures.",
-      techStack: ["Flutter", "WebSocket", "Riverpod", "Charts"],
-      image: "/placeholder.svg?height=200&width=300",
-      images: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
-      github: "https://github.com/username/trading-app",
-      playStore: "https://play.google.com/store/apps/details?id=com.example.trading",
-      appStore: "https://apps.apple.com/app/trading-app/id123456789",
-      featured: true,
-    },
-    {
-      title: "Food Delivery App",
-      description:
-        "Multi-restaurant food ordering platform with real-time tracking, payment gateway, and rating system.",
-      longDescription:
-        "A comprehensive food delivery platform connecting customers with local restaurants. Features include restaurant discovery, menu browsing, order customization, real-time order tracking with Google Maps integration, multiple payment options, and rating/review system. The app includes separate interfaces for customers, restaurants, and delivery drivers.",
-      techStack: ["Flutter", "Firebase", "Google Maps", "Razorpay"],
-      image: "/placeholder.svg?height=200&width=300",
-      images: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
-      github: "https://github.com/username/food-delivery",
-      playStore: "https://play.google.com/store/apps/details?id=com.example.food",
-      appStore: "https://apps.apple.com/app/food-delivery/id123456789",
-      featured: false,
-    },
-    {
-      title: "Fitness Tracker",
-      description: "Comprehensive fitness app with workout plans, nutrition tracking, and social features.",
-      longDescription:
-        "A complete fitness companion app that helps users achieve their health goals. Features include personalized workout plans, exercise tracking with video demonstrations, nutrition logging with barcode scanning, progress analytics, social challenges, and integration with wearable devices. Built with Flutter and local SQLite database for offline functionality.",
-      techStack: ["Flutter", "SQLite", "Health Kit", "Provider"],
-      image: "/placeholder.svg?height=200&width=300",
-      images: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
-      github: "https://github.com/username/fitness-tracker",
-      playStore: "https://play.google.com/store/apps/details?id=com.example.fitness",
-      appStore: "https://apps.apple.com/app/fitness-tracker/id123456789",
-      featured: false,
-    },
-    {
-      title: "Travel Booking App",
-      description: "Complete travel solution with flight booking, hotel reservations, and itinerary management.",
-      longDescription:
-        "An all-in-one travel booking platform that simplifies trip planning and booking. Features include flight search and booking, hotel reservations, car rentals, itinerary management, travel document storage, and expense tracking. The app integrates with multiple travel APIs and includes offline access to booking confirmations and travel documents.",
-      techStack: ["Flutter", "REST API", "Bloc", "Hive"],
-      image: "/placeholder.svg?height=200&width=300",
-      images: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
-      github: "https://github.com/username/travel-booking",
-      playStore: "https://play.google.com/store/apps/details?id=com.example.travel",
-      appStore: "https://apps.apple.com/app/travel-booking/id123456789",
-      featured: false,
-    },
-    {
-      title: "Learning Management System",
-      description: "Educational platform with video streaming, quizzes, progress tracking, and offline content.",
-      longDescription:
-        "A comprehensive e-learning platform designed for educational institutions and online course providers. Features include video streaming with adaptive quality, interactive quizzes and assessments, progress tracking and analytics, offline content download, discussion forums, and certificate generation. Built with Flutter and Firebase, supporting thousands of concurrent users.",
-      techStack: ["Flutter", "Firebase", "Video Player", "GetX"],
-      image: "/placeholder.svg?height=200&width=300",
-      images: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
-      github: "https://github.com/username/learning-management",
-      playStore: "https://play.google.com/store/apps/details?id=com.example.learning",
-      appStore: "https://apps.apple.com/app/learning-management/id123456789",
-      featured: false,
-    },
+  const projects = [{
+    title: "GR News",
+    description:
+      "Global Reporter is a news application that delivers accurate information with a wide variety of news types.",
+    longDescription:
+      "Global Reporter pay attention to news policy information and strive to provide the best information for accuracy. GR Team always carefully checks the information and post reliable news.In addition to reading local and international news in real time, GR have divided it by news type, country, and city so that you can easily read your favorite news. \nLet's join Global Reporter to read the daily news",
+    techStack: ["Flutter", "Pushy", "Provider", "Clean Architecture"],
+    image: "/Global Report.png?height=200&width=300",
+    images: [
+      "/Global Report 1.png?height=600&width=300",
+      // "/Global Report.png?height=600&width=300",
+      // "/Global Report.png?height=600&width=300",
+    ],
+    // github: "https://github.com/username/trading-app",
+    playStore: "https://apkpure.com/global-reporter/com.joygroup.globalreporterpro",
+    appStore: "https://apps.apple.com/mm/app/gr-news/id6737678665",
+    featured: true,
+  },
+  {
+    title: "Kwee Lamin",
+    description: "Kwee Lamin is an ecommerce app for Computer sales.",
+    longDescription:
+      "Kwee Lamin is an ecommerce app for Computer sales and allows users to shop online, browse product catalogs, create wish lists, add items to a cart, and complete purchases.",
+    techStack: ["Flutter", "Firebase", "Provider", "Clean Architecture"],
+    image: "/Kwee LaMin THUMBNAIL.png?height=200&width=300",
+    images: [
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+    ],
+    website: "https://www.kweelamin.com/",
+    // playStore: "https://apps.apple.com/cy/app/kwee-lamin/id6451135120",
+    appStore: "https://apps.apple.com/cy/app/kwee-lamin/id6451135120",
+    featured: true,
+  },
+  {
+    title: "BinaryComputerStore",
+    description: "Ecommerce app for Computer sales.",
+    longDescription:
+      "Binary Computer Store app is an ecommerce app for Computer sales and allows users to shop online, browse product catalogs, create wish lists, add items to a cart, and complete purchases.",
+    techStack: ["Flutter", "GraphQL", "BLoC", "WebRTC"],
+    image: "/binarycomputerstore.png?height=200&width=300",
+    images: [
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+    ],
+    // github: "https://github.com/username/healthcare-app",
+    playStore: "https://play.google.com/store/apps/details?id=com.hpe.binarys",
+    appStore: "https://apps.apple.com/cy/app/binarycomputerstore/id6450131505",
+    featured: true,
+  },
+  {
+    title: "Food.com.mm",
+    description:
+      "Our app is your one-stop-shop for all your food and product needs.",
+    longDescription:
+      "Our app is your one-stop-shop for all your food and product needs. With just a few taps on your smartphone, you can easily browse and purchase a wide variety of items, including groceries, snacks, and household essentials. Our user- friendly interface makes it easy to search for products, compare prices, and place orders.You can choose to have your items delivered straight to your doorstep or pick them up at a convenient location. We offer a range of payment options, prepaid and cash on delivery.Plus, our secure checkout process ensures that your personal and financial information is always protected. With our app, you can easily keep track of your orders, access past purchases, and receive notifications on the latest deals and promotions. Say goodbye to long queues at the grocery store and download our app today to start enjoying the convenience of shopping for food and products online!",
+    techStack: ["Flutter", "Firebase", "Provider", "Clean Architecture"],
+    image: "/fooodcommm.jpg?height=200&width=300",
+    images: [
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+    ],
+    // github: "https://github.com/username/social-app",
+    // playStore: "https://play.google.com/store/apps/details?id=com.example.social",
+    appStore: "https://apps.apple.com/cy/app/food-com-mm/id6446515746",
+    featured: true,
+  },
+
+  {
+    title: "Food Delivery App",
+    description:
+      "Multi-restaurant food ordering platform with real-time tracking, payment gateway, and rating system.",
+    longDescription:
+      "A comprehensive food delivery platform connecting customers with local restaurants. Features include restaurant discovery, menu browsing, order customization, real-time order tracking with Google Maps integration, multiple payment options, and rating/review system. The app includes separate interfaces for customers, restaurants, and delivery drivers.",
+    techStack: ["Flutter", "Firebase", "Google Maps", "Razorpay"],
+    image: "/placeholder.svg?height=200&width=300",
+    images: [
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+    ],
+    github: "https://github.com/username/food-delivery",
+    playStore: "https://play.google.com/store/apps/details?id=com.example.food",
+    appStore: "https://apps.apple.com/app/food-delivery/id123456789",
+    featured: false,
+  },
+  {
+    title: "Fitness Tracker",
+    description: "Comprehensive fitness app with workout plans, nutrition tracking, and social features.",
+    longDescription:
+      "A complete fitness companion app that helps users achieve their health goals. Features include personalized workout plans, exercise tracking with video demonstrations, nutrition logging with barcode scanning, progress analytics, social challenges, and integration with wearable devices. Built with Flutter and local SQLite database for offline functionality.",
+    techStack: ["Flutter", "SQLite", "Health Kit", "Provider"],
+    image: "/placeholder.svg?height=200&width=300",
+    images: [
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+    ],
+    github: "https://github.com/username/fitness-tracker",
+    playStore: "https://play.google.com/store/apps/details?id=com.example.fitness",
+    appStore: "https://apps.apple.com/app/fitness-tracker/id123456789",
+    featured: false,
+  },
+  {
+    title: "Travel Booking App",
+    description: "Complete travel solution with flight booking, hotel reservations, and itinerary management.",
+    longDescription:
+      "An all-in-one travel booking platform that simplifies trip planning and booking. Features include flight search and booking, hotel reservations, car rentals, itinerary management, travel document storage, and expense tracking. The app integrates with multiple travel APIs and includes offline access to booking confirmations and travel documents.",
+    techStack: ["Flutter", "REST API", "Bloc", "Hive"],
+    image: "/placeholder.svg?height=200&width=300",
+    images: [
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+    ],
+    github: "https://github.com/username/travel-booking",
+    playStore: "https://play.google.com/store/apps/details?id=com.example.travel",
+    appStore: "https://apps.apple.com/app/travel-booking/id123456789",
+    featured: false,
+  },
+  {
+    title: "Learning Management System",
+    description: "Educational platform with video streaming, quizzes, progress tracking, and offline content.",
+    longDescription:
+      "A comprehensive e-learning platform designed for educational institutions and online course providers. Features include video streaming with adaptive quality, interactive quizzes and assessments, progress tracking and analytics, offline content download, discussion forums, and certificate generation. Built with Flutter and Firebase, supporting thousands of concurrent users.",
+    techStack: ["Flutter", "Firebase", "Video Player", "GetX"],
+    image: "/placeholder.svg?height=200&width=300",
+    images: [
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+      "/placeholder.svg?height=600&width=300",
+    ],
+    github: "https://github.com/username/learning-management",
+    playStore: "https://play.google.com/store/apps/details?id=com.example.learning",
+    appStore: "https://apps.apple.com/app/learning-management/id123456789",
+    featured: false,
+  },
   ]
 
   const testimonials = [
@@ -336,6 +350,13 @@ export default function FlutterPortfolio() {
       avatar: "/placeholder.svg?height=60&width=60",
     },
   ]
+
+  const socialLinks = [
+    { Icon: Github, href: 'https://github.com/aungmyopaing890' },
+    { Icon: Linkedin, href: 'https://www.linkedin.com/in/aungmyo-paing-080160148/' },
+    { Icon: Mail, href: 'mailto:aungmyopaing890@gmail.com' },
+  ];
+
 
   return (
     <div className={`min-h-screen ${isDarkMode ? "dark" : ""}`}>
@@ -458,7 +479,7 @@ export default function FlutterPortfolio() {
                       Technologies Used
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedProject.techStack.map((tech, index) => (
+                      {selectedProject.techStack?.map((tech, index) => (
                         <Badge
                           key={index}
                           variant="secondary"
@@ -523,7 +544,7 @@ export default function FlutterPortfolio() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <span className="text-2xl font-bold text-blue-600 dark:text-blue-400 animate-gradient bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-                {"<Flutter Dev />"}
+                {"<Mobile Dev />"}
               </span>
             </div>
 
@@ -617,7 +638,7 @@ export default function FlutterPortfolio() {
               {"<Aung Myo Paing />"}
             </h2>
             <h1 className="text-3xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
-              Senior Flutter
+              Senior Mobile
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient">
                 {" "}
                 Developer
@@ -643,11 +664,11 @@ export default function FlutterPortfolio() {
                 </Button>
               </a>
 
-              <Button variant="outline" onClick={() => scrollToSection("projects")}
+              {/* <Button variant="outline" onClick={() => scrollToSection("projects")}
                 size="lg" className="px-8 py-3 text-lg hover-lift button-press">
                 View Projects
                 <ExternalLink className="ml-2 h-5 w-5" />
-              </Button>
+              </Button> */}
 
               <a
                 href="https://github.com/aungmyopaing890"
@@ -657,7 +678,20 @@ export default function FlutterPortfolio() {
                 <Button variant="outline" onClick={() => scrollToSection("projects")}
                   size="lg" className="px-8 py-3 text-lg hover-lift button-press">
                   <Github className="h-3 w-3 mr-1" />
-                  GitHub Profile
+                  GitHub
+                </Button>
+              </a>
+
+              <a
+                href="/Aung Myo Paing CV.pdf"
+                download
+              >
+                <Button
+                  size="lg"
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg hover-lift button-press"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download CV
                 </Button>
               </a>
 
@@ -686,7 +720,7 @@ export default function FlutterPortfolio() {
           <div className={`text-center mb-16 ${visibleElements.has("about") ? "animate-fade-in-up" : "opacity-0"}`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Passionate Flutter developer with a proven track record of delivering scalable, high-performance mobile
+              Passionate Mobile developer with a proven track record of delivering scalable, high-performance mobile
               applications
             </p>
           </div>
@@ -701,7 +735,7 @@ export default function FlutterPortfolio() {
                   className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl shadow-2xl object-cover border-4 border-gray-200 dark:border-gray-700 hover:scale-105 transition-transform duration-500 hover:rotate-2"
                 />
               </div> */}
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Senior Flutter Developer</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Senior Mobile Developer</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 With over 4 years of experience building cross-platform applications for startups and enterprises, I
                 specialize in creating pixel-perfect UIs with exceptional performance. My expertise spans the entire
@@ -818,7 +852,7 @@ export default function FlutterPortfolio() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {project.techStack.map((tech, techIndex) => (
+                      {project.techStack?.map((tech, techIndex) => (
                         <Badge
                           key={techIndex}
                           variant="secondary"
@@ -829,30 +863,35 @@ export default function FlutterPortfolio() {
                       ))}
                     </div>
                     <div className="flex space-x-4">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex items-center button-press hover:scale-105 transition-transform duration-200"
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          window.open(project.github, "_blank")
-                        }}
-                      >
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex items-center button-press hover:scale-105 transition-transform duration-200"
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          window.open(project.playStore, "_blank")
-                        }}
-                      >
-                        <Play className="h-4 w-4 mr-2" />
-                        Play Store
-                      </Button>
+                      {project.website && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex items-center button-press hover:scale-105 transition-transform duration-200"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            window.open(project.website, "_blank")
+                          }}
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Website
+                        </Button>
+                      )}
+
+                      {project.playStore && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex items-center button-press hover:scale-105 transition-transform duration-200"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(project.playStore, "_blank");
+                          }}
+                        >
+                          <Download className="h-4 w-4 mr-2" />
+                          Play Store
+                        </Button>
+                      )}
                       <Button
                         variant="outline"
                         size="sm"
@@ -909,7 +948,7 @@ export default function FlutterPortfolio() {
                       </CardHeader>
                       <CardContent className="pt-0">
                         <div className="flex flex-wrap gap-1 mb-4">
-                          {project.techStack.slice(0, 3).map((tech, techIndex) => (
+                          {project.techStack?.slice(0, 3).map((tech, techIndex) => (
                             <Badge
                               key={techIndex}
                               variant="secondary"
@@ -918,7 +957,7 @@ export default function FlutterPortfolio() {
                               {tech}
                             </Badge>
                           ))}
-                          {project.techStack.length > 3 && (
+                          {project.techStack && project.techStack.length > 3 && (
                             <Badge
                               variant="secondary"
                               className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs"
@@ -1111,9 +1150,9 @@ export default function FlutterPortfolio() {
 
               <div className="space-y-4">
                 {[
-                  { icon: Mail, title: "Email", value: "hello@flutterdev.com" },
-                  { icon: Linkedin, title: "LinkedIn", value: "linkedin.com/in/flutterdev" },
-                  { icon: Github, title: "GitHub", value: "github.com/flutterdev" },
+                  { icon: Mail, title: "Email", value: "aungmyopaing@gmail.com" },
+                  { icon: Linkedin, title: "LinkedIn", value: "https://www.linkedin.com/in/aungmyo-paing-080160148/" },
+                  { icon: Github, title: "GitHub", value: "https://github.com/aungmyopaing890" },
                 ].map((contact, index) => (
                   <div
                     key={index}
@@ -1180,15 +1219,27 @@ export default function FlutterPortfolio() {
           <div className="flex flex-col md:flex-row justify-between items-center animate-fade-in-up">
             <div className="mb-4 md:mb-0">
               <span className="text-2xl font-bold text-blue-400 animate-gradient bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-                {"<Flutter Dev />"}
+                {"<Mobile Dev />"}
               </span>
-              <p className="text-gray-400 mt-2">Senior Flutter Developer</p>
+              <p className="text-gray-400 mt-2">Senior Mobile Developer</p>
             </div>
             <div className="flex space-x-6">
-              {[Github, Linkedin, Mail].map((Icon, index) => (
+              {/* {[Github, Linkedin, Mail].map((Icon, index) => (
                 <a
                   key={index}
                   href="#"
+                  className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-125 hover:rotate-12 animate-bounce-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <Icon className="h-6 w-6" />
+                </a>
+              ))} */}
+              {socialLinks.map(({ Icon, href }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-125 hover:rotate-12 animate-bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
@@ -1198,7 +1249,8 @@ export default function FlutterPortfolio() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 animate-fade-in-up animate-stagger-1">
-            <p>&copy; {new Date().getFullYear()} Flutter Developer Portfolio. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Senior Mobile Developer Portfolio. All rights reserved.</p>
+            <p>Developed by Aung Myo Paing</p>
           </div>
         </div>
       </footer>
