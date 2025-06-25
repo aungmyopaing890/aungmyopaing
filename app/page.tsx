@@ -190,12 +190,12 @@ export default function FlutterPortfolio() {
     description:
       "Global Reporter is a news application that delivers accurate information with a wide variety of news types.",
     longDescription:
-      "Global Reporter pay attention to news policy information and strive to provide the best information for accuracy. GR Team always carefully checks the information and post reliable news.In addition to reading local and international news in real time, GR have divided it by news type, country, and city so that you can easily read your favorite news. \nLet's join Global Reporter to read the daily news",
+      "Worked collaboratively with another Flutter developer to build a news application that delivered both globaland local news content, personalized by the user’s selected country. The app featured real-timecategorization into Breaking News, Hot News, and other relevant topics. \n\nResponsibilities:\n\nDeveloped core features for delivering both global and local news, tailored to the user’s region andpreferences.\n\nImplemented push notifications for breaking news alerts and critical system updates to improve userengagement.\n\n Ensured smooth handling of localized and international news feeds with a strong focus on performance, data consistency, and real- time updates",
     techStack: ["Flutter", "Pushy", "Provider", "Clean Architecture"],
     image: "/Global Report.png?height=200&width=300",
     images: [
+      "/gr1.jpg?height=600&width=300",
       "/Global Report 1.png?height=600&width=300",
-      // "/Global Report.png?height=600&width=300",
       // "/Global Report.png?height=600&width=300",
     ],
     // github: "https://github.com/username/trading-app",
@@ -246,9 +246,10 @@ export default function FlutterPortfolio() {
     techStack: ["Flutter", "Firebase", "Provider", "Clean Architecture"],
     image: "/fooodcommm.jpg?height=200&width=300",
     images: [
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
+      "/food1.webp?height=600&width=300",
+      "/food2.webp?height=600&width=300",
+      "/food3.webp?height=600&width=300",
+      "/food4.webp?height=600&width=300",
     ],
     // github: "https://github.com/username/social-app",
     // playStore: "https://play.google.com/store/apps/details?id=com.example.social",
@@ -468,7 +469,12 @@ export default function FlutterPortfolio() {
                       About This Project
                     </h4>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {selectedProject.longDescription}
+                      {selectedProject.longDescription.split('\n').map((line, idx) => (
+                        <span key={idx}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
                     </p>
                   </div>
 
