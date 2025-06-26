@@ -656,7 +656,7 @@ export default function FlutterPortfolio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="animate-fade-in-up">
             {/* Profile Image */}
-            <div className="mb-8 animate-bounce-in">
+            <div className="mt-20 sm:mt-0 mb-8 animate-bounce-in">
               <img
                 src="/profile.png?height=200&width=200"
                 alt="Aung Myo Paing - Flutter Developer"
