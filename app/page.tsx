@@ -211,9 +211,10 @@ export default function FlutterPortfolio() {
     techStack: ["Flutter", "Firebase", "Provider", "Clean Architecture"],
     image: "/Kwee LaMin THUMBNAIL.png?height=200&width=300",
     images: [
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
+      "/kwee lamin 1.png?height=600&width=300",
+      "/kwee lamin 2.png?height=600&width=300",
+      "/kwee lamin 3.png?height=600&width=300", "/kwee lamin 4.png?height=600&width=300",
+
     ],
     website: "https://www.kweelamin.com/",
     // playStore: "https://apps.apple.com/cy/app/kwee-lamin/id6451135120",
@@ -228,9 +229,9 @@ export default function FlutterPortfolio() {
     techStack: ["Flutter", "GraphQL", "BLoC", "WebRTC"],
     image: "/binarycomputerstore.png?height=200&width=300",
     images: [
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
+      "/BinaryComputerStore1.jpg?height=600&width=300",
+      "/BinaryComputerStore2.webp?height=600&width=300",
+      "/BinaryComputerStore3.webp?height=600&width=300",
     ],
     // github: "https://github.com/username/healthcare-app",
     playStore: "https://play.google.com/store/apps/details?id=com.hpe.binarys",
@@ -402,7 +403,7 @@ export default function FlutterPortfolio() {
                     <img
                       src={selectedProject.images[currentImageIndex] || "/placeholder.svg"}
                       alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                      className="w-full h-full object-cover image-transition group-hover:scale-105"
+                      className="w-full h-full object-fill image-transition group-hover:scale-105"
                     />
 
                     {/* Navigation Arrows */}
