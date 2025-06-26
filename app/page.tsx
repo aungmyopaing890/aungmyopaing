@@ -221,23 +221,7 @@ export default function FlutterPortfolio() {
     appStore: "https://apps.apple.com/cy/app/kwee-lamin/id6451135120",
     featured: true,
   },
-  {
-    title: "BinaryComputerStore",
-    description: "Ecommerce app for Computer sales.",
-    longDescription:
-      "Binary Computer Store app is an ecommerce app for Computer sales and allows users to shop online, browse product catalogs, create wish lists, add items to a cart, and complete purchases.",
-    techStack: ["Flutter", "GraphQL", "BLoC", "WebRTC"],
-    image: "/binarycomputerstore.png?height=200&width=300",
-    images: [
-      "/BinaryComputerStore1.jpg?height=600&width=300",
-      "/BinaryComputerStore2.webp?height=600&width=300",
-      "/BinaryComputerStore3.webp?height=600&width=300",
-    ],
-    // github: "https://github.com/username/healthcare-app",
-    playStore: "https://play.google.com/store/apps/details?id=com.hpe.binarys",
-    appStore: "https://apps.apple.com/cy/app/binarycomputerstore/id6450131505",
-    featured: true,
-  },
+
   {
     title: "Food.com.mm",
     description:
@@ -257,77 +241,114 @@ export default function FlutterPortfolio() {
     appStore: "https://apps.apple.com/cy/app/food-com-mm/id6446515746",
     featured: true,
   },
+  {
+    title: "XH Express",
+    description: "Developed the User App for a cross-border logistics platform (China–Myanmar), enabling parcel submission, tracking, and delivery management. Built with Flutter using Provider, Clean Architecture, Go Router, and barcode scanning. Supported real-time notifications and delivery options by user type. Collaborated with backend and admin teams to ensure seamless integration.",
+    longDescription:
+      "Developed a logistics app for cross-border transportation between China and Myanmar, designed to cater to various user types. The project included the User App, Rider App, Main Counter (China) App, Other Counter (China) App, and Admin Site. My primary responsibility was developing the User App, focusing on its functionality and seamless user experience. \n Responsibilities:Communicated effectively with other mobile developers, backend developers, and the admin site team toensure smooth integration.\nDeveloped the User App using Provider, Clean Architecture, Go Router, and HTTP for API calls.\nIntegrated qr_code_scanner (^1.0.1) to implement a barcode scanning feature for parcels from randomproducts or online shops.\nImplemented features:\n\nSubmit and manage parcel addresses for delivery from China to Myanmar.Parcel tracking.\nReal-time notifications for parcel status updates.\nDelivery options based on user type (pickup or home delivery).",
+    techStack: ["Flutter", "Provider", "Go Router", "Clean Architecture", "qr_code_scanner"],
+    image: "/Thumbnail xh.png?height=200&width=300",
+    images: [
+      "/xh 1.png?height=600&width=300",
+      "/xh 2.png?height=600&width=300",
+      "/xh 3.png?height=600&width=300",
+    ],
+    // github: "https://github.com/username/fitness-tracker",
+    // playStore: "https://play.google.com/store/apps/details?id=com.example.fitness",
+    // appStore: "https://apps.apple.com/app/fitness-tracker/id123456789",
+    featured: false,
+  }
+    ,
+  {
+    title: "汇率员",
+    description:
+      "Rate Reporting in Myanmar is a comprehensive app for tracking and reporting exchange rates in Myanmar. It provides real-time updates on currency values, allowing users to stay informed about the latest rates.",
+    longDescription:
+      "Aimed at users in China, this application was developed to enable real-time tracking of currency exchange rates and cryptocurrency prices. The platform also allowed admins to manage custom categories such as Exchange Currency, Crypto, Rice, and other goods and commodities—ensuring flexibility for a wide range of financial and trade use cases. \n Responsibilities: \n\n Implemented user authentication using Google and Apple Sign- In.\n Built an admin dashboard to dynamically manage exchange rates and cryptocurrency prices.\n Integrated system notifications to alert users of market changes and app updates.\n Used Syncfusion Flutter Charts to develop interactive and informative data visualizations.\n Developed and maintained robust API interactions using Dio, with proper error handling and response validation.\n Built scalable and reusable UI components to deliver a responsive and intuitive user experience.\n Technologies & Methodologies: \n\n Flutter Flavors: Managed multiple environments(development, staging, production) with ease andconsistency.\nEnvironment Variables: Enabled dynamic configuration, improving deployment flexibility across builds.\nProvider: Used for state management, ensuring consistent UI updates and responsive state handling.\nClean Architecture: Adopted to maintain code scalability, separation of concerns, and long - term maintainability.\n Dio + Retrofit: Used for efficient, scalable API communication with support for interceptors and errortracking.",
+    techStack: ["Flutter", "Bloc", "Clean", "Firebase"],
+    image: "/Rate Reporter Graphic.png?height=200&width=300",
+    images: [
+      "/Rate Reporter 1.png?height=600&width=300",
+      "/Rate Reporter 2.png?height=600&width=300",
+      "/Rate Reporter 3.png?height=600&width=300",
+      "/Rate Reporter 4.png?height=600&width=300",
+    ],
+    // github: "https://github.com/username/food-delivery",
+    playStore: "https://apkpure.com/%E6%B1%87%E7%8E%87%E5%91%98/com.joygroup.ratereporterproduction",
+    appStore: "https://apps.apple.com/us/app/%E6%B1%87%E7%8E%87%E5%91%98/id6739500614",
+    featured: true,
+  },
 
   {
-    title: "Food Delivery App",
-    description:
-      "Multi-restaurant food ordering platform with real-time tracking, payment gateway, and rating system.",
+    title: "Shwe Pyae Phyo",
+    description: "Developed ShwePyaePhyo, a mobile ecommerce application tailored for buying and browsing gold and jewelry products. The platform was designed to serve Myanmar customers with trusted pricing, detailed product visuals, and secure order handling for high-value, luxury items.",
     longDescription:
-      "A comprehensive food delivery platform connecting customers with local restaurants. Features include restaurant discovery, menu browsing, order customization, real-time order tracking with Google Maps integration, multiple payment options, and rating/review system. The app includes separate interfaces for customers, restaurants, and delivery drivers.",
-    techStack: ["Flutter", "Firebase", "Google Maps", "Razorpay"],
-    image: "/placeholder.svg?height=200&width=300",
-    images: [
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
-    ],
-    github: "https://github.com/username/food-delivery",
-    playStore: "https://play.google.com/store/apps/details?id=com.example.food",
-    appStore: "https://apps.apple.com/app/food-delivery/id123456789",
-    featured: false,
-  },
-  {
-    title: "Fitness Tracker",
-    description: "Comprehensive fitness app with workout plans, nutrition tracking, and social features.",
-    longDescription:
-      "A complete fitness companion app that helps users achieve their health goals. Features include personalized workout plans, exercise tracking with video demonstrations, nutrition logging with barcode scanning, progress analytics, social challenges, and integration with wearable devices. Built with Flutter and local SQLite database for offline functionality.",
-    techStack: ["Flutter", "SQLite", "Health Kit", "Provider"],
-    image: "/placeholder.svg?height=200&width=300",
-    images: [
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
-    ],
-    github: "https://github.com/username/fitness-tracker",
-    playStore: "https://play.google.com/store/apps/details?id=com.example.fitness",
-    appStore: "https://apps.apple.com/app/fitness-tracker/id123456789",
-    featured: false,
-  },
-  {
-    title: "Travel Booking App",
-    description: "Complete travel solution with flight booking, hotel reservations, and itinerary management.",
-    longDescription:
-      "An all-in-one travel booking platform that simplifies trip planning and booking. Features include flight search and booking, hotel reservations, car rentals, itinerary management, travel document storage, and expense tracking. The app integrates with multiple travel APIs and includes offline access to booking confirmations and travel documents.",
+      "Developed ShwePyaePhyo, a mobile ecommerce application tailored for buying and browsing gold and jewelry products. The platform was designed to serve Myanmar customers with trusted pricing, detailed product visuals, and secure order handling for high-value, luxury items. \n \n Responsibilities:\nGold and jewelry catalog featuring high- resolution images and detailed specifications such as karat,weight, and type.\n Real - time gold price display with automatic price adjustment for each product based on market rates.\nWishlist and inquiry system to enable personalized engagement with high - value luxury items.\nSecure checkout supporting both home delivery and in -store pickup options.\nCustomer support integration directly within product and order screens for fast assistance.\n Implemented Features:\n\n Developed a rich product catalog showcasing gold and jewelry items with high - resolution images and detailed specifications such as karat value, weight, and type.\nIntegrated a real - time gold pricing system that dynamically adjusts product prices based on the current market rate.\n Enabled a wishlist and product inquiry feature to support personalized engagement and highinvolvement purchasing decisions.\n Built a secure and flexible checkout process, allowing users to choose between home delivery and instore pickup options.\n Embedded customer support access directly within product and order views, improving user trust and support response efficiency.\n Challenges:\n\n Ensured accurate pricing tied to daily gold rate fluctuations.\n Designed a luxurious, trustworthy UI for high - value transactions.\n Secured personal and payment data to build customer trust.\n Optimized image - heavy UI for performance without compromising quality.\n Handled localization for Myanmar language and formats.\n Managed real - time inventory and pricing updates.\n Implemented spam - safe inquiry forms with user - friendly validation.",
     techStack: ["Flutter", "REST API", "Bloc", "Hive"],
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/shwepyaephyo.jpg?height=200&width=300",
     images: [
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
+      "/shwepyaephyo1.webp?height=600&width=300",
+      "/shwepyaephyo2.webp?height=600&width=300",
+      "/shwepyaephyo3.webp?height=600&width=300",
+      "/shwepyaephyo4.webp?height=600&width=300",
     ],
-    github: "https://github.com/username/travel-booking",
-    playStore: "https://play.google.com/store/apps/details?id=com.example.travel",
-    appStore: "https://apps.apple.com/app/travel-booking/id123456789",
+    // github: "https://github.com/username/travel-booking",
+    // playStore: "https://play.google.com/store/apps/details?id=com.example.travel",
+    appStore: "https://apps.apple.com/cy/app/shwepyaephyo/id6470454086",
     featured: false,
   },
   {
-    title: "Learning Management System",
-    description: "Educational platform with video streaming, quizzes, progress tracking, and offline content.",
+    title: "BinaryComputerStore",
+    description: "Ecommerce app for Computer sales.",
     longDescription:
-      "A comprehensive e-learning platform designed for educational institutions and online course providers. Features include video streaming with adaptive quality, interactive quizzes and assessments, progress tracking and analytics, offline content download, discussion forums, and certificate generation. Built with Flutter and Firebase, supporting thousands of concurrent users.",
-    techStack: ["Flutter", "Firebase", "Video Player", "GetX"],
-    image: "/placeholder.svg?height=200&width=300",
+      "Binary Computer Store app is an ecommerce app for Computer sales and allows users to shop online, browse product catalogs, create wish lists, add items to a cart, and complete purchases.",
+    techStack: ["Flutter", "GraphQL", "BLoC", "WebRTC"],
+    image: "/binarycomputerstore.png?height=200&width=300",
     images: [
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
-      "/placeholder.svg?height=600&width=300",
+      "/BinaryComputerStore1.jpg?height=600&width=300",
+      "/BinaryComputerStore2.webp?height=600&width=300",
+      "/BinaryComputerStore3.webp?height=600&width=300",
     ],
-    github: "https://github.com/username/learning-management",
-    playStore: "https://play.google.com/store/apps/details?id=com.example.learning",
-    appStore: "https://apps.apple.com/app/learning-management/id123456789",
+    // github: "https://github.com/username/healthcare-app",
+    playStore: "https://play.google.com/store/apps/details?id=com.hpe.binarys",
+    appStore: "https://apps.apple.com/cy/app/binarycomputerstore/id6450131505",
     featured: false,
   },
-  ]
+  {
+    title: "Wisdom Tree Library",
+    description: "Developed Wisdom Tree Library, a mobile application designed to give users access to a wide collection of books, journals, and educational materials. The app supports both digital reading and physical book reservations, along with personalized book tracking features tailored for students and lifelong learners.",
+    longDescription:
+      "Developed Wisdom Tree Library, a mobile application designed to give users access to a wide collection of books, journals, and educational materials.The app supports both digital reading and physical book reservations, along with personalized book tracking features tailored for students and lifelong learners. \nResponsibilities: \n\n Built the mobile frontend using Provider, Clean Architecture, Go Router, and Dio to ensure maintainability and scalability.\nDesigned and implemented UI components for book listings, search, filters, and category- basednavigation to enhance user experience.\nIntegrated QR code - based check -in/check-out functionality and user-specific borrowing historytracking.\nCollaborated with the backend team to sync book availability, manage borrow limits, and support userauthentication for secure access.\nImplemented Features: \n\nSearch and browse digital library content by title, author, category, and language.\nBorrow and reserve system for both physical and digital books, including return tracking.\nQR code scanning for fast check -in/check-out and location tagging within physical libraries.\nReading history and bookmarks with support for personal reading goals and reminders.\nAdmin panel integration for inventory management and user access control.\nChallenges: \n\nDesigned an intuitive interface suitable for both academic users and casual readers.\nEnsured real - time synchronization of book availability and user activity across devices.\nManaged offline access and implemented caching strategies for smooth reading experiences without connectivity",
+    techStack: ["Flutter", "Firebase", "riverpod", "Go Router", "Clean Architecture"],
+    image: "/Wisdom Tree Library.webp?height=200&width=300",
+    images: [
+      "/Wisdom Tree Library 1.webp?height=600&width=300",
+      "/Wisdom Tree Library 2.webp?height=600&width=300",
+      "/Wisdom Tree Library 3.webp?height=600&width=300",
+      "/Wisdom Tree Library 4.webp?height=600&width=300",
+    ],
+    // github: "https://github.com/username/learning-management",
+    // playStore: "https://play.google.com/store/apps/details?id=com.example.learning",
+    appStore: "https://apps.apple.com/cy/app/wisdom-tree-library/id6464262162",
+    featured: false,
+  },
+  {
+    title: "Royal Collection",
+    description: "Developed Royal Collection, a mobile ecommerce application focused on selling a curated range ofcosmetics, skincare, and beauty products. The app delivers a premium shopping experience for users in Myanmar, featuring detailed product visuals, brand filtering, and fast, secure checkout options.",
+    longDescription:
+      "Developed Royal Collection, a mobile ecommerce application focused on selling a curated range ofcosmetics, skincare, and beauty products. The app delivers a premium shopping experience for users in Myanmar, featuring detailed product visuals, brand filtering, and fast, secure checkout options.\n  Responsibilities: Designed and developed the frontend using Riverpod, Clean Architecture, Go Router, and Dio forstructured development and smooth API communication.\n Created visually engaging UI components to highlight product quality, skin compatibility, and userreviews.\n Implemented smart search, brand filtering, and personalized product recommendations.\n Collaborated with backend developers to manage product inventory, promotional logic, and orderhistory.\n Implemented Features:\n \n Product catalog with skincare, makeup, fragrance, and personal care items, featuring high- qualityimages and ingredient highlights.\n Filter and search by brand, product type, category, and skin type.\n Promotions and bundle offers with real - time stock updates.\n Customer reviews and ratings displayed on product detail pages.\n Fast and secure checkout with support for multiple delivery addresses and varied payment methods.\n Challenges:\n \n Designing a visually elegant and trustworthy UI tailored to beauty - conscious consumers.\n Handling diverse product data, including ingredient lists, skin types, and shade compatibility.\n Ensuring smooth app performance and minimal load time despite media - heavy content.",
+    techStack: ["Flutter", "Firebase", "GetX", "Go Router", "Clean Architecture"],
+    image: "/Wisdom Tree Library.webp?height=200&width=300",
+    images: [
+      "/Royal Collection1.webp?height=600&width=300",
+      "/Royal Collection2.webp?height=600&width=300",
+      "/Royal Collection3.webp?height=600&width=300",
+      "/Royal Collection4.webp?height=600&width=300",
+    ],
+
+    appStore: "https://apps.apple.com/cy/app/royal-collection/id6449526605",
+    featured: false,
+  },]
 
   const testimonials = [
     {
@@ -506,7 +527,7 @@ export default function FlutterPortfolio() {
                       View Project
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      {selectedProject.github && (
+                      {selectedProject.github && selectedProject.github.trim() !== "" && (
                         <Button
                           variant="outline"
                           className="flex items-center justify-center hover-lift button-press glow"
@@ -516,7 +537,8 @@ export default function FlutterPortfolio() {
                           GitHub
                         </Button>
                       )}
-                      {selectedProject.playStore && (
+
+                      {selectedProject.playStore && selectedProject.playStore.trim() !== "" && (
                         <Button
                           variant="outline"
                           className="flex items-center justify-center hover-lift button-press"
@@ -526,7 +548,7 @@ export default function FlutterPortfolio() {
                           Play Store
                         </Button>
                       )}
-                      {selectedProject.appStore && (
+                      {selectedProject.appStore && selectedProject.appStore.trim() !== "" && (
                         <Button
                           variant="outline"
                           className="flex items-center justify-center hover-lift button-press"
@@ -926,8 +948,8 @@ export default function FlutterPortfolio() {
             </h3>
 
             {/* Horizontal Scrollable Container */}
-            <div className="relative">
-              <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4" style={{ scrollSnapType: "x mandatory" }}>
+            <div className="relative w-full">
+              <div className="flex overflow-x-scroll scrollbar-thin scrollbar-hide gap-6 pb-4 max-w-full" style={{ scrollSnapType: "x mandatory" }}>
                 {projects
                   .filter((project) => !project.featured)
                   .map((project, index) => (
@@ -974,18 +996,38 @@ export default function FlutterPortfolio() {
                           )}
                         </div>
                         <div className="flex space-x-2">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="flex items-center text-xs px-2 py-1 button-press hover:scale-105 transition-transform duration-200"
-                            onClick={(e) => {
-                              e.stopPropagation()
-                              window.open(project.github, "_blank")
-                            }}
-                          >
-                            <Github className="h-3 w-3 mr-1" />
-                            Code
-                          </Button>
+                          {project.github && project.github.trim() !== "" && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="flex items-center text-xs px-2 py-1 button-press hover:scale-105 transition-transform duration-200"
+                              onClick={() => window.open(project.github, "_blank")}
+                            >
+                              <Github className="h-3 w-3 mr-1" />
+                              GitHub
+                            </Button>
+                          )}
+
+                          {project.playStore && project.playStore.trim() !== "" && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="flex items-center text-xs px-2 py-1 button-press hover:scale-105 transition-transform duration-200" onClick={() => window.open(project.playStore, "_blank")}
+                            >
+                              <Play className="h-3 w-3 mr-1" />
+                              Play Store
+                            </Button>
+                          )}
+                          {project.appStore && project.appStore.trim() !== "" && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="flex items-center text-xs px-2 py-1 button-press hover:scale-105 transition-transform duration-200" onClick={() => window.open(project.appStore, "_blank")}
+                            >
+                              <Download className="h-3 w-3 mr-1" />
+                              App Store
+                            </Button>
+                          )}
                           <Button
                             variant="outline"
                             size="sm"
@@ -1021,14 +1063,6 @@ export default function FlutterPortfolio() {
                 <ChevronDown className="h-4 w-4 rotate-[-90deg]" />
               </p>
             </div>
-          </div>
-
-          {/* View All Projects Button */}
-          <div className="text-center">
-            <Button variant="outline" size="lg" className="px-8 py-3 hover-lift button-press glow">
-              View All Projects
-              <ExternalLink className="ml-2 h-5 w-5" />
-            </Button>
           </div>
         </div>
       </section>
@@ -1087,56 +1121,6 @@ export default function FlutterPortfolio() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-gray-50 dark:bg-gray-800" data-animate>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`text-center mb-16 ${visibleElements.has("testimonials") ? "animate-fade-in-up" : "opacity-0"}`}
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Client Testimonials</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              What clients and colleagues say about working with me
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className={`bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift hover:scale-105 transition-all duration-500 ${visibleElements.has("testimonials") ? "animate-fade-in-up" : "opacity-0"
-                  }`}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-5 w-5 text-yellow-400 fill-current animate-bounce-in"
-                        style={{ animationDelay: `${i * 0.1}s` }}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 italic">"{testimonial.content}"</p>
-                  <div className="flex items-center">
-                    <img
-                      src={testimonial.avatar || "/placeholder.svg"}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full mr-4 hover:scale-110 transition-transform duration-300"
-                    />
-                    <div>
-                      <div className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white dark:bg-gray-900" data-animate>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
