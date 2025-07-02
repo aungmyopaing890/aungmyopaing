@@ -167,22 +167,26 @@ export default function FlutterPortfolio() {
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
-    { id: "skills", label: "Skills" },
-    { id: "testimonials", label: "Testimonials" },
+    { id: "skills", label: "Tech Stack" },
     { id: "contact", label: "Contact" },
   ]
 
-  const skills = [
-    { name: "Flutter", level: 95 },
-    { name: "Dart", level: 95 },
-    { name: "Firebase", level: 90 },
-    { name: "REST APIs", level: 88 },
-    { name: "GraphQL", level: 85 },
-    { name: "Riverpod", level: 92 },
-    { name: "BLoC", level: 90 },
-    { name: "Native Integration", level: 85 },
-    { name: "CI/CD", level: 80 },
-    { name: "Testing", level: 88 },
+  const techStack = [
+    { name: "Flutter", letter: "F", color: "text-blue-400" },
+    { name: "Dart", letter: "D", color: "text-blue-500" },
+    { name: "Firebase", letter: "F", color: "text-orange-400" },
+    { name: "REST APIs", letter: "R", color: "text-green-400" },
+    { name: "GraphQL", letter: "G", color: "text-pink-400" },
+    { name: "Riverpod", letter: "R", color: "text-purple-400" },
+    { name: "BLoC", letter: "B", color: "text-indigo-400" },
+    { name: "Provider", letter: "P", color: "text-cyan-400" },
+    { name: "GetX", letter: "G", color: "text-emerald-400" },
+    { name: "Hive", letter: "H", color: "text-yellow-400" },
+    { name: "SQLite", letter: "S", color: "text-blue-300" },
+    { name: "Git", letter: "G", color: "text-red-400" },
+    { name: "CI/CD", letter: "C", color: "text-teal-400" },
+    { name: "Testing", letter: "T", color: "text-lime-400" },
+    { name: "Native", letter: "N", color: "text-violet-400" },
   ]
 
   const projects = [
@@ -347,30 +351,6 @@ export default function FlutterPortfolio() {
 
       appStore: "https://apps.apple.com/cy/app/royal-collection/id6449526605",
       featured: false,
-    },
-  ]
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "Product Manager at TechCorp",
-      content:
-        "Working with this Flutter developer was exceptional. They delivered a pixel-perfect app ahead of schedule with clean, maintainable code. Their attention to performance optimization was outstanding.",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO at StartupXYZ",
-      content:
-        "Incredible technical skills and collaborative attitude. They seamlessly integrated complex native modules and helped us scale our app to handle millions of users. Highly recommended!",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Lead Developer at InnovateLab",
-      content:
-        "Their expertise in state management and Flutter architecture is top-notch. They consistently delivered high-quality code and were always reliable in meeting deadlines.",
-      avatar: "/placeholder.svg?height=60&width=60",
     },
   ]
 
@@ -1086,299 +1066,209 @@ export default function FlutterPortfolio() {
               ))}
           </div>
 
-          {/* More Projects Carousel */}
-          {/* <div className={`text-center mb-16 ${visibleElements.has("projects") ? "animate-fade-in-up" : "opacity-0"}`}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">More Projects</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Explore a wider range of my mobile development projects
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
+          {/* Additional Projects */}
+          <div className={`${visibleElements.has("projects") ? "animate-fade-in-up" : "opacity-0"}`}>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">More Projects</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects
                 .filter((project) => !project.featured)
                 .map((project, index) => (
-                  <div
+                  <Card
                     key={index}
-                    className="snap-start first:pl-0 last:pr-0 px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+                    className={`group hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 cursor-pointer hover-lift hover:scale-105 animate-fade-in-up`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                    onClick={() => openProjectModal(project)}
                   >
-                    <Card className="group hover:shadow-xl transition-all duration-500 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer hover-lift hover:scale-105">
-                      <div className="aspect-video overflow-hidden">
-                        <img
-                          src={project.image || "/placeholder.svg"}
-                          alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                      </div>
-                      <CardHeader>
-                        <CardTitle className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                          {project.title}
-                        </CardTitle>
-                        <CardDescription className="text-gray-600 dark:text-gray-300">
-                          {project.description}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex flex-wrap gap-2 mb-6">
-                          {project.techStack?.map((tech, techIndex) => (
-                            <Badge
-                              key={techIndex}
-                              variant="secondary"
-                              className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 hover:scale-110 transition-transform duration-200"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                        <div className="flex space-x-4">
-                          {project.website && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex items-center button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                              onClick={(e: React.MouseEvent) => {
-                                e.stopPropagation()
-                                window.open(project.website as string, "_blank")
-                              }}
-                            >
-                              <ExternalLink className="h-4 w-4 mr-2" />
-                              Website
-                            </Button>
-                          )}
-
-                          {project.github && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex items-center button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                              onClick={(e: React.MouseEvent) => {
-                                e.stopPropagation()
-                                window.open(project.github as string, "_blank")
-                              }}
-                            >
-                              <Github className="h-4 w-4 mr-2" />
-                              GitHub
-                            </Button>
-                          )}
-
-                          {project.playStore && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex items-center button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                              onClick={(e: React.MouseEvent) => {
-                                e.stopPropagation()
-                                window.open(project.playStore as string, "_blank")
-                              }}
-                            >
-                              <Play className="h-4 w-4 mr-2" />
-                              Play Store
-                            </Button>
-                          )}
-
-                          {project.appStore && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex items-center button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                              onClick={(e: React.MouseEvent) => {
-                                e.stopPropagation()
-                                window.open(project.appStore as string, "_blank")
-                              }}
-                            >
-                              <Download className="h-4 w-4 mr-2" />
-                              App Store
-                            </Button>
-                          )}
-                          <Button
-                            variant="default"
-                            size="sm"
-                            className="flex items-center button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                            onClick={(e: React.MouseEvent) => {
-                              e.stopPropagation()
-                              openProjectModal(project)
-                            }}
+                    <div className="aspect-video overflow-hidden">
+                      <img
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                        {project.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {project.techStack?.slice(0, 3).map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
+                            className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform duration-200"
                           >
-                            Details
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
+                            {tech}
+                          </Badge>
+                        ))}
+                        {project.techStack && project.techStack.length > 3 && (
+                          <Badge
+                            variant="secondary"
+                            className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                          >
+                            +{project.techStack.length - 3}
+                          </Badge>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
                 ))}
             </div>
-
-            <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between">
-              <button className="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-110 button-press">
-                <ChevronLeft className="h-6 w-6" />
-              </button>
-              <button className="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-110 button-press">
-                <ChevronRight className="h-6 w-6" />
-              </button>
-            </div>
-          </div> */}
+          </div>
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Tech Stack Section */}
       <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800" data-animate>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"}`}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">My Skills</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Tech Stack</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Proficient in a wide range of technologies and tools for mobile app development
+              Technologies and tools I use to build robust, scalable solutions
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skills.map((skill, index) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            {techStack.map((tech, index) => (
               <div
                 key={index}
-                className={`p-6 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover-lift transition-all duration-300 hover:scale-105 ${
+                className={`group bg-gray-800 dark:bg-gray-900 border border-gray-700 dark:border-gray-600 rounded-lg p-6 text-center hover:scale-105 transition-all duration-300 hover:shadow-lg ${
                   visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{skill.name}</h3>
-                <div className="relative h-4 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-blue-600 dark:bg-blue-400 transition-all duration-500"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                  <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm font-medium text-white">
-                    {skill.level}%
-                  </span>
+                <div
+                  className={`text-4xl font-bold mb-3 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
+                >
+                  {tech.letter}
                 </div>
+                <div className="text-sm text-gray-300 dark:text-gray-400 font-medium">{tech.name}</div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-white dark:bg-gray-900" data-animate>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`text-center mb-16 ${visibleElements.has("testimonials") ? "animate-fade-in-up" : "opacity-0"}`}
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Testimonials</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              What clients and colleagues say about my work and expertise
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className={`bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover-lift transition-all duration-300 hover:scale-105 ${
-                  visibleElements.has("testimonials") ? "animate-fade-in-up" : "opacity-0"
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader>
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src={testimonial.avatar || "/placeholder.svg"}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <CardTitle className="text-lg font-semibold text-gray-900 dark:text-white">
-                        {testimonial.name}
-                      </CardTitle>
-                      <CardDescription className="text-gray-600 dark:text-gray-300">{testimonial.role}</CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{testimonial.content}</p>
-                </CardContent>
-              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800" data-animate>
+      <section id="contact" className="py-20 bg-white dark:bg-gray-900" data-animate>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 ${visibleElements.has("contact") ? "animate-fade-in-up" : "opacity-0"}`}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Contact Me</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Feel free to reach out for collaborations, project inquiries, or just a friendly hello
+              Ready to bring your mobile app idea to life? Let's discuss your project and create something amazing
+              together.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className={`${visibleElements.has("contact") ? "animate-slide-in-left" : "opacity-0"}`}>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Get in Touch</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                I am open to discussing new projects, collaborations, or any opportunities where my skills and
-                experience can be of value. Please use the contact form or reach out through my social links below.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Info */}
+            <div className={`space-y-8 ${visibleElements.has("contact") ? "animate-slide-in-left" : "opacity-0"}`}>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Let's Connect</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                  I'm always interested in new opportunities and exciting projects. Whether you need a complete mobile
+                  app, performance optimization, or technical consultation, I'd love to hear from you.
+                </p>
+              </div>
 
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {socialLinks.map((link, index) => (
                   <a
                     key={index}
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-4 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-lg hover-lift transition-all duration-300 hover:scale-105"
+                    className="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300 hover:scale-105 group animate-fade-in-up"
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover:scale-110 transition-transform duration-300">
                       <link.Icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                     </div>
-                    <span className="text-gray-900 dark:text-white">{link.href}</span>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                        {link.Icon === Github && "GitHub"}
+                        {link.Icon === Linkedin && "LinkedIn"}
+                        {link.Icon === Mail && "Email"}
+                      </h4>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {link.Icon === Github && "View my repositories"}
+                        {link.Icon === Linkedin && "Connect professionally"}
+                        {link.Icon === Mail && "Send me a message"}
+                      </p>
+                    </div>
                   </a>
                 ))}
               </div>
             </div>
 
+            {/* Contact Form */}
             <div className={`${visibleElements.has("contact") ? "animate-slide-in-right" : "opacity-0"}`}>
-              <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-lg shadow-md">
+              <Card className="bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-xl font-bold text-gray-900 dark:text-white">Send me a message</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">Send a Message</CardTitle>
                   <CardDescription className="text-gray-600 dark:text-gray-300">
-                    Your email address will not be published.
+                    Fill out the form below and I'll get back to you within 24 hours.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        className="mt-1 block w-full border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
-                      />
+                  <form className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          First Name
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="John"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 hover:scale-105 focus:scale-105"
+                        />
+                      </div>
+                      <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          Last Name
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="Doe"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 hover:scale-105 focus:scale-105"
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Email
-                      </label>
+                    <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
                       <input
                         type="email"
-                        id="email"
-                        className="mt-1 block w-full border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
+                        placeholder="john@example.com"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 hover:scale-105 focus:scale-105"
                       />
                     </div>
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Message
-                      </label>
+                    <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                      <input
+                        type="text"
+                        placeholder="Project Discussion"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 hover:scale-105 focus:scale-105"
+                      />
+                    </div>
+                    <div className="animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
                       <textarea
-                        id="message"
-                        rows={4}
-                        className="mt-1 block w-full border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
+                        placeholder="Tell me about your project..."
+                        rows={5}
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 hover:scale-105 focus:scale-105"
                       ></textarea>
                     </div>
-                    <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white hover-lift button-press">
+                    <Button
+                      type="submit"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg hover-lift button-press glow animate-fade-in-up"
+                      style={{ animationDelay: "0.6s" }}
+                    >
                       Send Message
+                      <Mail className="ml-2 h-5 w-5" />
                     </Button>
                   </form>
                 </CardContent>
@@ -1389,9 +1279,29 @@ export default function FlutterPortfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-gray-900 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">&copy; {new Date().getFullYear()} Aung Myo Paing. All rights reserved.</p>
+      <footer className="bg-gray-900 dark:bg-black text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex justify-center space-x-6 mb-8">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gray-800 dark:bg-gray-900 rounded-full hover:bg-blue-600 dark:hover:bg-blue-600 transition-all duration-300 hover:scale-110 hover:-translate-y-1 button-press"
+                >
+                  <link.Icon className="h-6 w-6" />
+                </a>
+              ))}
+            </div>
+            <p className="text-gray-400 mb-4">
+              © 2024 Aung Myo Paing. All rights reserved. Built with Next.js and Tailwind CSS.
+            </p>
+            <p className="text-gray-500 text-sm">
+              Crafting exceptional mobile experiences, one line of code at a time.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
