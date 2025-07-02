@@ -849,7 +849,8 @@ export default function FlutterPortfolio() {
         </div>
       </section>
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800" data-animate>
+      {/* Experience Section */}
+      <section id="experience" className="py-20 bg-white dark:bg-gray-900" data-animate>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`text-center mb-16 ${visibleElements.has("experience") ? "animate-fade-in-up" : "opacity-0"}`}
@@ -860,137 +861,193 @@ export default function FlutterPortfolio() {
             </p>
           </div>
 
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 dark:bg-blue-800 rounded-full"></div>
+          {/* Mobile-First Timeline */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Timeline Line - Hidden on mobile, visible on larger screens */}
+            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 dark:bg-blue-800 rounded-full"></div>
+
+            {/* Mobile Timeline Line - Left aligned */}
+            <div className="lg:hidden absolute left-6 top-0 w-0.5 h-full bg-blue-200 dark:bg-blue-800 rounded-full"></div>
 
             {/* Experience Items */}
-            <div className="space-y-12">
+            <div className="space-y-8 lg:space-y-12">
               {/* Senior Flutter Developer - JoyGroup */}
-              <div
-                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"
-                  }`}
-              >
-                <div className="flex-1 pr-8 text-right">
-                  <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-end mb-2">
-                        <Badge className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300">
-                          Current
-                        </Badge>
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Senior Flutter Developer</h3>
-                      <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">JoyGroup International</p>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">Bangkok, Thailand</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">11/2023 – Present</p>
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Leading mobile development projects, mentoring junior developers, and architecting scalable
-                        Flutter applications for international markets.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
+              <div className={`relative ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"}`}>
+                {/* Mobile Timeline Dot */}
+                <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
-                {/* Timeline Dot */}
-                <div className="relative z-10">
-                  <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
-                </div>
+                {/* Desktop Timeline Dot */}
+                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-6 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
-                <div className="flex-1 pl-8"></div>
+                {/* Content Card */}
+                <div className="ml-12 lg:ml-0 lg:flex lg:items-center">
+                  <div className="lg:flex-1 lg:pr-8 lg:text-right">
+                    <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300 shadow-lg">
+                      <CardContent className="p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                          <div className="mb-2 sm:mb-0">
+                            <Badge className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-sm px-3 py-1">
+                              Current
+                            </Badge>
+                          </div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">11/2023 – Present</div>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                          Senior Flutter Developer
+                        </h3>
+                        <p className="text-blue-600 dark:text-blue-400 font-semibold text-lg mb-2">
+                          JoyGroup International
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
+                          <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+                          Bangkok, Thailand
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                          Leading mobile development projects, mentoring junior developers, and architecting scalable
+                          Flutter applications for international markets.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div className="hidden lg:block lg:flex-1 lg:pl-8"></div>
+                </div>
               </div>
 
               {/* Mid Senior Flutter Developer - App.com.mm */}
               <div
-                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"
-                  }`}
+                className={`relative ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"}`}
                 style={{ animationDelay: "0.2s" }}
               >
-                <div className="flex-1 pr-8"></div>
+                {/* Mobile Timeline Dot */}
+                <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-purple-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
-                {/* Timeline Dot */}
-                <div className="relative z-10">
-                  <div className="w-4 h-4 bg-purple-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
-                </div>
+                {/* Desktop Timeline Dot */}
+                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-6 w-4 h-4 bg-purple-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
-                <div className="flex-1 pl-8">
-                  <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                        Mid Senior Flutter Developer
-                      </h3>
-                      <p className="text-purple-600 dark:text-purple-400 font-semibold mb-2">App.com.mm</p>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">Yangon, Myanmar</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">04/2023 - 11/2023</p>
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Developed complex e-commerce and logistics applications, implemented advanced state management
-                        patterns, and optimized app performance for large user bases.
-                      </p>
-                    </CardContent>
-                  </Card>
+                {/* Content Card */}
+                <div className="ml-12 lg:ml-0 lg:flex lg:items-center">
+                  <div className="hidden lg:block lg:flex-1 lg:pr-8"></div>
+                  <div className="lg:flex-1 lg:pl-8">
+                    <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300 shadow-lg">
+                      <CardContent className="p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                          <div className="mb-2 sm:mb-0">
+                            <Badge className="bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-sm px-3 py-1">
+                              Previous
+                            </Badge>
+                          </div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">04/2023 - 11/2023</div>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                          Mid Senior Flutter Developer
+                        </h3>
+                        <p className="text-purple-600 dark:text-purple-400 font-semibold text-lg mb-2">App.com.mm</p>
+                        <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
+                          <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+                          Yangon, Myanmar
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                          Developed complex e-commerce and logistics applications, implemented advanced state management
+                          patterns, and optimized app performance for large user bases.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
               </div>
 
               {/* Junior Flutter Developer - PanaceaSoft */}
               <div
-                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"
-                  }`}
+                className={`relative ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"}`}
                 style={{ animationDelay: "0.4s" }}
               >
-                <div className="flex-1 pr-8 text-right">
-                  <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Junior Flutter Developer</h3>
-                      <p className="text-green-600 dark:text-green-400 font-semibold mb-2">PanaceaSoft</p>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">Yangon, Myanmar</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">9/2022 - 4/2023</p>
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Built mobile applications with clean architecture, integrated REST APIs, and collaborated with
-                        cross-functional teams to deliver high-quality products.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
+                {/* Mobile Timeline Dot */}
+                <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-green-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
-                {/* Timeline Dot */}
-                <div className="relative z-10">
-                  <div className="w-4 h-4 bg-green-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
-                </div>
+                {/* Desktop Timeline Dot */}
+                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-6 w-4 h-4 bg-green-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
-                <div className="flex-1 pl-8"></div>
+                {/* Content Card */}
+                <div className="ml-12 lg:ml-0 lg:flex lg:items-center">
+                  <div className="lg:flex-1 lg:pr-8 lg:text-right">
+                    <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300 shadow-lg">
+                      <CardContent className="p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                          <div className="mb-2 sm:mb-0">
+                            <Badge className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-sm px-3 py-1">
+                              Previous
+                            </Badge>
+                          </div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">9/2022 - 4/2023</div>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                          Junior Flutter Developer
+                        </h3>
+                        <p className="text-green-600 dark:text-green-400 font-semibold text-lg mb-2">PanaceaSoft</p>
+                        <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
+                          <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+                          Yangon, Myanmar
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                          Built mobile applications with clean architecture, integrated REST APIs, and collaborated with
+                          cross-functional teams to deliver high-quality products.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div className="hidden lg:block lg:flex-1 lg:pl-8"></div>
+                </div>
               </div>
 
               {/* Junior Flutter Developer - TechPlusSolution */}
               <div
-                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"
-                  }`}
+                className={`relative ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"}`}
                 style={{ animationDelay: "0.6s" }}
               >
-                <div className="flex-1 pr-8"></div>
+                {/* Mobile Timeline Dot */}
+                <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-orange-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
-                {/* Timeline Dot */}
-                <div className="relative z-10">
-                  <div className="w-4 h-4 bg-orange-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
-                </div>
+                {/* Desktop Timeline Dot */}
+                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-6 w-4 h-4 bg-orange-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
-                <div className="flex-1 pl-8">
-                  <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Junior Flutter Developer</h3>
-                      <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">TechPlusSolution</p>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">Yangon, Myanmar</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">04/2021 - 9/2022</p>
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Started my Flutter development journey, learned mobile app fundamentals, and contributed to
-                        various client projects while building strong technical foundations.
-                      </p>
-                    </CardContent>
-                  </Card>
+                {/* Content Card */}
+                <div className="ml-12 lg:ml-0 lg:flex lg:items-center">
+                  <div className="hidden lg:block lg:flex-1 lg:pr-8"></div>
+                  <div className="lg:flex-1 lg:pl-8">
+                    <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300 shadow-lg">
+                      <CardContent className="p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                          <div className="mb-2 sm:mb-0">
+                            <Badge className="bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 text-sm px-3 py-1">
+                              Previous
+                            </Badge>
+                          </div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">04/2021 - 9/2022</div>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                          Junior Flutter Developer
+                        </h3>
+                        <p className="text-orange-600 dark:text-orange-400 font-semibold text-lg mb-2">
+                          TechPlusSolution
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
+                          <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+                          Yangon, Myanmar
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                          Started my Flutter development journey, learned mobile app fundamentals, and contributed to
+                          various client projects while building strong technical foundations.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-white dark:bg-gray-900" data-animate>
