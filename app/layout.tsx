@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: ["https://aungmyopaing.me/profile.png?height=200&width=200"],
     creator: "@yourtwitterhandle",
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
