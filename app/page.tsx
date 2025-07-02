@@ -172,21 +172,27 @@ export default function FlutterPortfolio() {
   ]
 
   const techStack = [
-    { name: "Flutter", letter: "F", color: "text-blue-400" },
-    { name: "Dart", letter: "D", color: "text-blue-500" },
-    { name: "Firebase", letter: "F", color: "text-orange-400" },
-    { name: "REST APIs", letter: "R", color: "text-green-400" },
-    { name: "GraphQL", letter: "G", color: "text-pink-400" },
-    { name: "Riverpod", letter: "R", color: "text-purple-400" },
-    { name: "BLoC", letter: "B", color: "text-indigo-400" },
-    { name: "Provider", letter: "P", color: "text-cyan-400" },
-    { name: "GetX", letter: "G", color: "text-emerald-400" },
-    { name: "Hive", letter: "H", color: "text-yellow-400" },
-    { name: "SQLite", letter: "S", color: "text-blue-300" },
-    { name: "Git", letter: "G", color: "text-red-400" },
-    { name: "CI/CD", letter: "C", color: "text-teal-400" },
-    { name: "Testing", letter: "T", color: "text-lime-400" },
-    { name: "Native", letter: "N", color: "text-violet-400" },
+    { name: "Flutter", logo: "/logos/flutter.png" },
+    { name: "Dart", logo: "/logos/dart.png" },
+    { name: "Swift", logo: "/logos/swift.png" },
+    { name: "SwiftUI", logo: "/logos/swiftui.png" },
+    { name: "kotlin", logo: "/logos/kotlin.png" },
+    { name: "Java", logo: "/logos/java.png" },
+    { name: "Nodejs", logo: "/logos/nodejs.png" },
+    { name: "Node Express", logo: "/logos/node express.png" },
+    { name: "Firebase", logo: "/logos/firebase.svg" },
+    { name: "REST APIs", logo: "/logos/restapi.png" },
+    { name: "GraphQL", logo: "/logos/graphql.png" },
+    { name: "Riverpod", logo: "/logos/riverpod.png" },
+    { name: "BLoC", logo: "/logos/bloc.png" },
+    { name: "Provider", logo: "/logos/provider.png" },
+    { name: "GetX", logo: "/logos/getx.png" },
+    { name: "Hive", logo: "/logos/hive.png" },
+    { name: "SQLite", logo: "/logos/sqlite.png" },
+    { name: "Git", logo: "/logos/git.png" },
+    { name: "CI/CD", logo: "/logos/cicd.png" },
+    { name: "Testing", logo: "/logos/testing.png" },
+    { name: "Clean", logo: "/logos/Layers-of-Clean-Architecture.webp" },
   ]
 
   const projects = [
@@ -431,9 +437,8 @@ export default function FlutterPortfolio() {
                           <button
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                              index === currentImageIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
-                            }`}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentImageIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
+                              }`}
                           />
                         ))}
                       </div>
@@ -447,11 +452,10 @@ export default function FlutterPortfolio() {
                         <button
                           key={index}
                           onClick={() => setCurrentImageIndex(index)}
-                          className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 hover:scale-105 ${
-                            index === currentImageIndex
-                              ? "border-blue-500 shadow-lg shadow-blue-500/25"
-                              : "border-gray-200 dark:border-gray-700 hover:border-blue-300"
-                          }`}
+                          className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 hover:scale-105 ${index === currentImageIndex
+                            ? "border-blue-500 shadow-lg shadow-blue-500/25"
+                            : "border-gray-200 dark:border-gray-700 hover:border-blue-300"
+                            }`}
                         >
                           <img
                             src={image || "/placeholder.svg"}
@@ -564,9 +568,8 @@ export default function FlutterPortfolio() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 ${
-                    activeSection === item.id ? "text-blue-600 dark:text-blue-400" : "text-gray-700 dark:text-gray-300"
-                  } animate-fade-in-down`}
+                  className={`text-sm font-medium transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 ${activeSection === item.id ? "text-blue-600 dark:text-blue-400" : "text-gray-700 dark:text-gray-300"
+                    } animate-fade-in-down`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {item.label}
@@ -606,11 +609,10 @@ export default function FlutterPortfolio() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:scale-105 animate-fade-in ${
-                    activeSection === item.id
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
-                      : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
-                  }`}
+                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:scale-105 animate-fade-in ${activeSection === item.id
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
+                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                    }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {item.label}
@@ -815,7 +817,37 @@ export default function FlutterPortfolio() {
           </div>
         </div>
       </section>
+      {/* Tech Stack Section */}
+      <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800" data-animate>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`text-center mb-16 ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"}`}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Tech Stack</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Technologies and tools I use to build robust, scalable solutions
+            </p>
+          </div>
 
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            {techStack.map((tech, index) => (
+              <div
+                key={index}
+                className={`group bg-gray-800 dark:bg-gray-900 border border-gray-700 dark:border-gray-600 rounded-lg p-6 text-center hover:scale-105 transition-all duration-300 hover:shadow-lg ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"
+                  }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="mb-3 flex justify-center">
+                  <img
+                    src={tech.logo}
+                    alt={tech.name}
+                    className="h-10 w-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="text-sm text-gray-300 dark:text-gray-400 font-medium">{tech.name}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800" data-animate>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -836,9 +868,8 @@ export default function FlutterPortfolio() {
             <div className="space-y-12">
               {/* Senior Flutter Developer - JoyGroup */}
               <div
-                className={`flex items-center ${
-                  visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"
-                }`}
+                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"
+                  }`}
               >
                 <div className="flex-1 pr-8 text-right">
                   <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300">
@@ -870,9 +901,8 @@ export default function FlutterPortfolio() {
 
               {/* Mid Senior Flutter Developer - App.com.mm */}
               <div
-                className={`flex items-center ${
-                  visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"
-                }`}
+                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"
+                  }`}
                 style={{ animationDelay: "0.2s" }}
               >
                 <div className="flex-1 pr-8"></div>
@@ -902,9 +932,8 @@ export default function FlutterPortfolio() {
 
               {/* Junior Flutter Developer - PanaceaSoft */}
               <div
-                className={`flex items-center ${
-                  visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"
-                }`}
+                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"
+                  }`}
                 style={{ animationDelay: "0.4s" }}
               >
                 <div className="flex-1 pr-8 text-right">
@@ -932,9 +961,8 @@ export default function FlutterPortfolio() {
 
               {/* Junior Flutter Developer - TechPlusSolution */}
               <div
-                className={`flex items-center ${
-                  visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"
-                }`}
+                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"
+                  }`}
                 style={{ animationDelay: "0.6s" }}
               >
                 <div className="flex-1 pr-8"></div>
@@ -982,9 +1010,8 @@ export default function FlutterPortfolio() {
               .map((project, index) => (
                 <Card
                   key={index}
-                  className={`group hover:shadow-xl transition-all duration-500 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer hover-lift hover:scale-105 ${
-                    visibleElements.has("projects") ? "animate-fade-in-up" : "opacity-0"
-                  }`}
+                  className={`group hover:shadow-xl transition-all duration-500 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer hover-lift hover:scale-105 ${visibleElements.has("projects") ? "animate-fade-in-up" : "opacity-0"
+                    }`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                   onClick={() => openProjectModal(project)}
                 >
@@ -1122,36 +1149,6 @@ export default function FlutterPortfolio() {
         </div>
       </section>
 
-      {/* Tech Stack Section */}
-      <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800" data-animate>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"}`}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Tech Stack</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Technologies and tools I use to build robust, scalable solutions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
-            {techStack.map((tech, index) => (
-              <div
-                key={index}
-                className={`group bg-gray-800 dark:bg-gray-900 border border-gray-700 dark:border-gray-600 rounded-lg p-6 text-center hover:scale-105 transition-all duration-300 hover:shadow-lg ${
-                  visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div
-                  className={`text-4xl font-bold mb-3 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {tech.letter}
-                </div>
-                <div className="text-sm text-gray-300 dark:text-gray-400 font-medium">{tech.name}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white dark:bg-gray-900" data-animate>
