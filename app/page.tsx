@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -52,7 +50,7 @@ export default function FlutterPortfolio() {
   const [isModalClosing, setIsModalClosing] = useState(false)
   const [visibleElements, setVisibleElements] = useState(new Set())
   const [isLoading, setIsLoading] = useState(false)
-  const observerRef = useRef(null)
+  const observerRef = useRef<IntersectionObserver | null>(null)
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId)
@@ -116,7 +114,7 @@ export default function FlutterPortfolio() {
     }
   }
 
-  const openProjectModal = (project) => {
+  const openProjectModal = (project: Project) => {
     setIsLoading(true)
     setTimeout(() => {
       setSelectedProject(project)
@@ -150,7 +148,7 @@ export default function FlutterPortfolio() {
 
   // Close modal on escape key
   useEffect(() => {
-    const handleEscape = (e) => {
+    const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         closeProjectModal()
       }
@@ -191,7 +189,7 @@ export default function FlutterPortfolio() {
       description:
         "Global Reporter is a news application that delivers accurate information with a wide variety of news types.",
       longDescription:
-        "Worked collaboratively with another Flutter developer to build a news application that delivered both globaland local news content, personalized by the user’s selected country. The app featured real-timecategorization into Breaking News, Hot News, and other relevant topics. \n\nResponsibilities:\n\nDeveloped core features for delivering both global and local news, tailored to the user’s region andpreferences.\n\nImplemented push notifications for breaking news alerts and critical system updates to improve userengagement.\n\n Ensured smooth handling of localized and international news feeds with a strong focus on performance, data consistency, and real- time updates",
+        "Worked collaboratively with another Flutter developer to build a news application that delivered both globaland local news content, personalized by the user's selected country. The app featured real-timecategorization into Breaking News, Hot News, and other relevant topics. \n\nResponsibilities:\n\nDeveloped core features for delivering both global and local news, tailored to the user's region andpreferences.\n\nImplemented push notifications for breaking news alerts and critical system updates to improve userengagement.\n\n Ensured smooth handling of localized and international news feeds with a strong focus on performance, data consistency, and real- time updates",
       techStack: ["Flutter", "Pushy", "Provider", "Clean Architecture"],
       image: "/Global Report.png?height=200&width=300",
       images: [
@@ -856,7 +854,9 @@ export default function FlutterPortfolio() {
             <div className="space-y-12">
               {/* Senior Flutter Developer - JoyGroup */}
               <div
-                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"}`}
+                className={`flex items-center ${
+                  visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"
+                }`}
               >
                 <div className="flex-1 pr-8 text-right">
                   <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300">
@@ -888,7 +888,9 @@ export default function FlutterPortfolio() {
 
               {/* Mid Senior Flutter Developer - App.com.mm */}
               <div
-                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"}`}
+                className={`flex items-center ${
+                  visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"
+                }`}
                 style={{ animationDelay: "0.2s" }}
               >
                 <div className="flex-1 pr-8"></div>
@@ -918,7 +920,9 @@ export default function FlutterPortfolio() {
 
               {/* Junior Flutter Developer - PanaceaSoft */}
               <div
-                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"}`}
+                className={`flex items-center ${
+                  visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"
+                }`}
                 style={{ animationDelay: "0.4s" }}
               >
                 <div className="flex-1 pr-8 text-right">
@@ -946,7 +950,9 @@ export default function FlutterPortfolio() {
 
               {/* Junior Flutter Developer - TechPlusSolution */}
               <div
-                className={`flex items-center ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"}`}
+                className={`flex items-center ${
+                  visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"
+                }`}
                 style={{ animationDelay: "0.6s" }}
               >
                 <div className="flex-1 pr-8"></div>
@@ -977,7 +983,7 @@ export default function FlutterPortfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800" data-animate>
+      <section id="projects" className="py-20 bg-white dark:bg-gray-900" data-animate>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 ${visibleElements.has("projects") ? "animate-fade-in-up" : "opacity-0"}`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
@@ -1048,345 +1054,4 @@ export default function FlutterPortfolio() {
                           variant="outline"
                           size="sm"
                           className="flex items-center button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                          onClick={(e) => {
-                            e.stopPropagation()
-                            window.open(project.playStore, "_blank")
-                          }}
-                        >
-                          <Download className="h-4 w-4 mr-2" />
-                          Play Store
-                        </Button>
-                      )}
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex items-center button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          window.open(project.appStore, "_blank")
-                        }}
-                      >
-                        <Download className="h-4 w-4 mr-2" />
-                        App Store
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-          </div>
-
-          {/* More Projects Section */}
-          <div className="mb-8">
-            <h3
-              className={`text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center ${visibleElements.has("projects") ? "animate-fade-in-up" : "opacity-0"}`}
-            >
-              More Projects
-            </h3>
-
-            {/* Horizontal Scrollable Container */}
-            <div className="relative w-full">
-              <div
-                className="flex overflow-x-scroll scrollbar-thin scrollbar-hide gap-6 pb-4 max-w-full"
-                style={{ scrollSnapType: "x mandatory" }}
-              >
-                {projects
-                  .filter((project) => !project.featured)
-                  .map((project, index) => (
-                    <Card
-                      key={index}
-                      className={`group hover:shadow-xl transition-all duration-500 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 overflow-hidden flex-shrink-0 w-80 cursor-pointer hover-lift hover:scale-105 ${
-                        visibleElements.has("projects") ? "animate-slide-in-right" : "opacity-0"
-                      }`}
-                      style={{ scrollSnapAlign: "start", animationDelay: `${index * 0.1}s` }}
-                      onClick={() => openProjectModal(project)}
-                    >
-                      <div className="aspect-video overflow-hidden">
-                        <img
-                          src={project.image || "/placeholder.svg"}
-                          alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                      </div>
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                          {project.title}
-                        </CardTitle>
-                        <CardDescription className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
-                          {project.description}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="pt-0">
-                        <div className="flex flex-wrap gap-1 mb-4">
-                          {project.techStack?.slice(0, 3).map((tech, techIndex) => (
-                            <Badge
-                              key={techIndex}
-                              variant="secondary"
-                              className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs hover:scale-110 transition-transform duration-200"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                          {project.techStack && project.techStack.length > 3 && (
-                            <Badge
-                              variant="secondary"
-                              className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs"
-                            >
-                              +{project.techStack.length - 3}
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="flex space-x-2">
-                          {project.github && project.github.trim() !== "" && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex items-center text-xs px-2 py-1 button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                              onClick={() => window.open(project.github, "_blank")}
-                            >
-                              <Github className="h-3 w-3 mr-1" />
-                              GitHub
-                            </Button>
-                          )}
-
-                          {project.playStore && project.playStore.trim() !== "" && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex items-center text-xs px-2 py-1 button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                              onClick={() => window.open(project.playStore, "_blank")}
-                            >
-                              <Play className="h-3 w-3 mr-1" />
-                              Play Store
-                            </Button>
-                          )}
-                          {project.appStore && project.appStore.trim() !== "" && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex items-center text-xs px-2 py-1 button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                              onClick={() => window.open(project.appStore, "_blank")}
-                            >
-                              <Download className="h-3 w-3 mr-1" />
-                              App Store
-                            </Button>
-                          )}
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="flex items-center text-xs px-2 py-1 button-press hover:scale-105 transition-transform duration-200 bg-transparent"
-                            onClick={(e) => {
-                              e.stopPropagation()
-                              openProjectModal(project)
-                            }}
-                          >
-                            <ExternalLink className="h-3 w-3 mr-1" />
-                            Details
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-              </div>
-
-              {/* Scroll Indicators */}
-              <div className="flex justify-center mt-4 space-x-2">
-                {projects
-                  .filter((project) => !project.featured)
-                  .map((_, index) => (
-                    <div key={index} className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600 animate-pulse" />
-                  ))}
-              </div>
-            </div>
-
-            {/* Swipe Hint */}
-            <div className="text-center mt-4">
-              <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center justify-center animate-bounce">
-                <span className="mr-2">Swipe to see more projects</span>
-                <ChevronDown className="h-4 w-4 rotate-[-90deg]" />
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20 bg-white dark:bg-gray-900" data-animate>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"}`}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills & Technologies</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Comprehensive expertise in Flutter ecosystem and modern mobile development tools
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className={`space-y-2 ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex justify-between items-center">
-                  <span className="font-medium text-gray-900 dark:text-white">{skill.name}</span>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                  <div
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out animate-shimmer"
-                    style={{
-                      width: visibleElements.has("skills") ? `${skill.level}%` : "0%",
-                      backgroundImage: "linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)",
-                      backgroundSize: "200px 100%",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div
-            className={`mt-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"}`}
-          >
-            {["Flutter", "Dart", "Firebase", "GraphQL", "Riverpod", "BLoC"].map((tech, index) => (
-              <div
-                key={index}
-                className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-md transition-all duration-300 hover-lift hover:scale-110 animate-bounce-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-12 h-12 mx-auto mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center group-hover-rotate transition-transform duration-300">
-                  <Code className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                </div>
-                <span className="text-sm font-medium text-gray-900 dark:text-white">{tech}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white dark:bg-gray-900" data-animate>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 ${visibleElements.has("contact") ? "animate-fade-in-up" : "opacity-0"}`}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Let's Work Together</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Ready to bring your mobile app idea to life? Let's discuss your project
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className={`${visibleElements.has("contact") ? "animate-slide-in-left" : "opacity-0"}`}>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Get In Touch</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
-                I'm always interested in new opportunities and exciting projects. Whether you need a complete mobile app
-                or want to enhance an existing one, I'd love to hear from you.
-              </p>
-
-              <div className="space-y-4">
-                {[
-                  { icon: Mail, title: "Email", value: "aungmyopaing@gmail.com" },
-                  { icon: Linkedin, title: "LinkedIn", value: "https://www.linkedin.com/in/aungmyo-paing-080160148/" },
-                  { icon: Github, title: "GitHub", value: "https://github.com/aungmyopaing890" },
-                ].map((contact, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center space-x-4 hover-lift transition-all duration-300 hover:scale-105 animate-fade-in-up"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover-rotate transition-transform duration-300">
-                      <contact.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900 dark:text-white">{contact.title}</div>
-                      <div className="text-gray-600 dark:text-gray-300">{contact.value}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <Card
-              className={`bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-500 ${visibleElements.has("contact") ? "animate-slide-in-right" : "opacity-0"}`}
-            >
-              <CardHeader>
-                <CardTitle className="text-gray-900 dark:text-white">Send Message</CardTitle>
-                <CardDescription className="text-gray-600 dark:text-gray-300">
-                  Fill out the form below and I'll get back to you within 24 hours
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div className="animate-fade-in-up">
-                    <Input
-                      placeholder="Your Name"
-                      className="bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-600 focus:scale-105 transition-transform duration-200"
-                    />
-                  </div>
-                  <div className="animate-fade-in-up animate-stagger-1">
-                    <Input
-                      type="email"
-                      placeholder="Your Email"
-                      className="bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-600 focus:scale-105 transition-transform duration-200"
-                    />
-                  </div>
-                  <div className="animate-fade-in-up animate-stagger-2">
-                    <Textarea
-                      placeholder="Your Message"
-                      rows={4}
-                      className="bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-600 focus:scale-105 transition-transform duration-200"
-                    />
-                  </div>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white hover-lift button-press glow animate-fade-in-up animate-stagger-3">
-                    Send Message
-                    <Mail className="ml-2 h-4 w-4" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-8 bg-gray-900 dark:bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center animate-fade-in-up">
-            <div className="mb-4 md:mb-0">
-              <span className="text-2xl font-bold text-blue-400 animate-gradient bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-                {"<Mobile Dev />"}
-              </span>
-              <p className="text-gray-400 mt-2">Senior Mobile Developer</p>
-            </div>
-            <div className="flex space-x-6">
-              {/* {[Github, Linkedin, Mail].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-125 hover:rotate-12 animate-bounce-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <Icon className="h-6 w-6" />
-                </a>
-              ))} */}
-              {socialLinks.map(({ Icon, href }, index) => (
-                <a
-                  key={index}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-125 hover:rotate-12 animate-bounce-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <Icon className="h-6 w-6" />
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 animate-fade-in-up animate-stagger-1">
-            <p>&copy; {new Date().getFullYear()} Senior Mobile Developer Portfolio. All rights reserved.</p>
-            <p>Developed by Aung Myo Paing</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  )
-}
+                          onClick\
