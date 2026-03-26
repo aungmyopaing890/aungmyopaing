@@ -178,6 +178,8 @@ export default function FlutterPortfolio() {
     { name: "SwiftUI", logo: "/logos/swiftui.png" },
     { name: "kotlin", logo: "/logos/kotlin.png" },
     { name: "Java", logo: "/logos/java.png" },
+    { name: "React", logo: "/logos/react.png" },
+    { name: "Next.js", logo: "/logos/nextjs.png" },
     { name: "Nodejs", logo: "/logos/nodejs.png" },
     { name: "Node Express", logo: "/logos/node express.png" },
     { name: "Firebase", logo: "/logos/firebase.svg" },
@@ -652,15 +654,14 @@ export default function FlutterPortfolio() {
               {"<Aung Myo Paing />"}
             </h2>
             <h1 className="text-3xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
-              Senior Mobile
+              Senior Software
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient">
                 {" "}
-                Developer
+                Engineer
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-stagger-1">
-              4+ years crafting high-performance cross-platform mobile apps with pixel-perfect UI/UX and seamless native
-              integrations
+              5+ years building full-stack solutions with production-grade backends (Python, Node.js) and modern web/mobile frontends (React, Next.js, Flutter) for global teams
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up animate-stagger-2">
               <a href="https://www.linkedin.com/in/aungmyo-paing-080160148/" target="_blank" rel="noopener noreferrer">
@@ -741,11 +742,9 @@ export default function FlutterPortfolio() {
                   className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl shadow-2xl object-cover border-4 border-gray-200 dark:border-gray-700 hover:scale-105 transition-transform duration-500 hover:rotate-2"
                 />
               </div> */}
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Senior Mobile Developer</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Senior Software Engineer</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                With over 4 years of experience building cross-platform applications for startups and enterprises, I
-                specialize in creating pixel-perfect UIs with exceptional performance. My expertise spans the entire
-                mobile development lifecycle, from architecture design to deployment and maintenance.
+                With over 5 years of full-stack experience, I build scalable applications across web frontends (React, Next.js), mobile platforms (Flutter), and robust backends (Python, Node.js). I specialize in architecting end-to-end solutions for startups and enterprises, ensuring seamless integration between frontend UI/UX and backend services while optimizing for performance and reliability.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                 I have a deep understanding of state management patterns (Riverpod, BLoC), native module integration,
@@ -755,7 +754,7 @@ export default function FlutterPortfolio() {
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover-lift hover:scale-105 transition-all duration-300">
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 animate-bounce-in">4+</div>
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 animate-bounce-in">5+</div>
                   <div className="text-gray-600 dark:text-gray-300">Years Experience</div>
                 </div>
                 <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover-lift hover:scale-105 transition-all duration-300">
@@ -871,7 +870,7 @@ export default function FlutterPortfolio() {
 
             {/* Experience Items */}
             <div className="space-y-8 lg:space-y-12">
-              {/* Senior Flutter Developer - JoyGroup */}
+              {/* Full Stack Developer - Beyond Climate Solutions */}
               <div className={`relative ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"}`}>
                 {/* Mobile Timeline Dot */}
                 <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
@@ -890,21 +889,20 @@ export default function FlutterPortfolio() {
                               Current
                             </Badge>
                           </div>
-                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">11/2023 – Present</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">02/2026 – Present</div>
                         </div>
                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                          Senior Flutter Developer
+                          Full Stack Developer
                         </h3>
                         <p className="text-blue-600 dark:text-blue-400 font-semibold text-lg mb-2">
-                          JoyGroup International
+                          Beyond Climate Solutions
                         </p>
                         <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
                           <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
-                          Bangkok, Thailand
+                          Pathum Thani, Thailand · On-site
                         </p>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
-                          Leading mobile development projects, mentoring junior developers, and architecting scalable
-                          Flutter applications for international markets.
+                          Led full-stack development of CLDB Platform for Thai Meteorological Department, architecting mobile apps in Flutter while implementing Python-based data workflows and interactive visualizations for climate monitoring and disaster management.
                         </p>
                       </CardContent>
                     </Card>
@@ -913,7 +911,7 @@ export default function FlutterPortfolio() {
                 </div>
               </div>
 
-              {/* Mid Senior Flutter Developer - App.com.mm */}
+              {/* Senior Flutter Developer - JoyGroup International */}
               <div
                 className={`relative ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"}`}
                 style={{ animationDelay: "0.2s" }}
@@ -936,12 +934,54 @@ export default function FlutterPortfolio() {
                               Previous
                             </Badge>
                           </div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">11/2023 - 08/2025</div>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                          Senior Flutter Developer
+                        </h3>
+                        <p className="text-purple-600 dark:text-purple-400 font-semibold text-lg mb-2">JoyGroup International</p>
+                        <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
+                          <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+                          Bangkok, Thailand
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                          Led mobile development projects, mentored junior developers, and architected scalable Flutter
+                          applications for international markets.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mid Senior Flutter Developer - App.com.mm */}
+              <div
+                className={`relative ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"}`}
+                style={{ animationDelay: "0.4s" }}
+              >
+                {/* Mobile Timeline Dot */}
+                <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+
+                {/* Desktop Timeline Dot */}
+                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-6 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+
+                {/* Content Card */}
+                <div className="ml-12 lg:ml-0 lg:flex lg:items-center">
+                  <div className="lg:flex-1 lg:pr-8 lg:text-right">
+                    <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300 shadow-lg">
+                      <CardContent className="p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                          <div className="mb-2 sm:mb-0">
+                            <Badge className="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 text-sm px-3 py-1">
+                              Previous
+                            </Badge>
+                          </div>
                           <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">04/2023 - 11/2023</div>
                         </div>
                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
                           Mid Senior Flutter Developer
                         </h3>
-                        <p className="text-purple-600 dark:text-purple-400 font-semibold text-lg mb-2">App.com.mm</p>
+                        <p className="text-indigo-600 dark:text-indigo-400 font-semibold text-lg mb-2">App.com.mm</p>
                         <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
                           <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
                           Yangon, Myanmar
@@ -953,13 +993,14 @@ export default function FlutterPortfolio() {
                       </CardContent>
                     </Card>
                   </div>
+                  <div className="hidden lg:block lg:flex-1 lg:pl-8"></div>
                 </div>
               </div>
 
               {/* Junior Flutter Developer - PanaceaSoft */}
               <div
                 className={`relative ${visibleElements.has("experience") ? "animate-slide-in-left" : "opacity-0"}`}
-                style={{ animationDelay: "0.4s" }}
+                style={{ animationDelay: "0.6s" }}
               >
                 {/* Mobile Timeline Dot */}
                 <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-green-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
@@ -1002,7 +1043,7 @@ export default function FlutterPortfolio() {
               {/* Junior Flutter Developer - TechPlusSolution */}
               <div
                 className={`relative ${visibleElements.has("experience") ? "animate-slide-in-right" : "opacity-0"}`}
-                style={{ animationDelay: "0.6s" }}
+                style={{ animationDelay: "0.8s" }}
               >
                 {/* Mobile Timeline Dot */}
                 <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-orange-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
