@@ -667,7 +667,7 @@ export default function FlutterPortfolio() {
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-stagger-1">
-              5+ years building full-stack solutions with production-grade backends (Python, Node.js) and modern web/mobile frontends (React, Next.js, Flutter) for global teams
+              Full-stack developer with 5+ years shipping production software — from Flutter mobile apps to React & Next.js frontends and Python & Node.js backends for global teams
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up animate-stagger-2">
               <a href="https://www.linkedin.com/in/aungmyo-paing-080160148/" target="_blank" rel="noopener noreferrer">
