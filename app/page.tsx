@@ -86,6 +86,30 @@ export default function FlutterPortfolio() {
     return () => observerRef.current?.disconnect()
   }, [])
 
+  // Scroll spy: highlight the nav item for the section currently in view
+  useEffect(() => {
+    const sectionIds = ["home", "about", "experience", "learning", "projects", "skills", "contact"]
+
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      // Thin band ~47% down the viewport → exactly one section crosses it at a time
+      { rootMargin: "-45% 0px -53% 0px", threshold: 0 },
+    )
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) spy.observe(el)
+    })
+
+    return () => spy.disconnect()
+  }, [])
+
   useEffect(() => {
     // Check for saved preference, system preference, or default to dark
     const savedTheme = localStorage.getItem("theme")
