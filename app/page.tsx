@@ -27,6 +27,11 @@ import {
   Sparkles,
   Rocket,
   Heart,
+  GraduationCap,
+  BookOpen,
+  Brain,
+  Target,
+  TrendingUp,
 } from "lucide-react"
 
 export default function FlutterPortfolio() {
@@ -166,6 +171,7 @@ export default function FlutterPortfolio() {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
+    { id: "learning", label: "Learning" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Tech Stack" },
     { id: "contact", label: "Contact" },
@@ -178,8 +184,8 @@ export default function FlutterPortfolio() {
     { name: "SwiftUI", logo: "/logos/swiftui.png" },
     { name: "kotlin", logo: "/logos/kotlin.png" },
     { name: "Java", logo: "/logos/java.png" },
-    { name: "React", logo: "/logos/react.png" },
-    { name: "Next.js", logo: "/logos/nextjs.png" },
+    { name: "React", logo: "/logos/react.svg" },
+    { name: "Next.js", logo: "/logos/nextjs.svg" },
     { name: "Nodejs", logo: "/logos/nodejs.png" },
     { name: "Node Express", logo: "/logos/node express.png" },
     { name: "Firebase", logo: "/logos/firebase.svg" },
@@ -727,8 +733,8 @@ export default function FlutterPortfolio() {
           <div className={`text-center mb-16 ${visibleElements.has("about") ? "animate-fade-in-up" : "opacity-0"}`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Passionate Mobile developer with a proven track record of delivering scalable, high-performance mobile
-              applications
+              Full-stack developer with 5+ years building production software — from mobile into end-to-end web and
+              backend systems.
             </p>
           </div>
 
@@ -744,12 +750,18 @@ export default function FlutterPortfolio() {
               </div> */}
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Senior Software Engineer</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                With over 5 years of full-stack experience, I build scalable applications across web frontends (React, Next.js), mobile platforms (Flutter), and robust backends (Python, Node.js). I specialize in architecting end-to-end solutions for startups and enterprises, ensuring seamless integration between frontend UI/UX and backend services while optimizing for performance and reliability.
+                I'm a Full Stack Developer at Beyond Climate Solutions in Pathum Thani, Thailand, working on the CLDB
+                Platform for the Thai Meteorological Department — Flutter apps backed by Python data workflows and
+                interactive visualisations for climate monitoring and disaster management. Over 5+ years I've built
+                production software, starting in mobile and growing into full-stack work across Flutter, React, Next.js,
+                Python and Node.js.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                I have a deep understanding of state management patterns (Riverpod, BLoC), native module integration,
-                and performance optimization techniques. My attention to detail and collaborative approach have helped
-                teams deliver successful products that scale to millions of users.
+                I care about clean architecture, state management (BLoC, Riverpod, Provider) and performance — 60fps UI,
+                efficient memory, and code that stays maintainable as it scales. Alongside that I'm studying mathematics
+                and AI research in a structured way, currently Mathematics for Computer Science and AI For Everyone,
+                working towards reading and reproducing machine learning papers. I enjoy solving complex problems through
+                code, and I'm always happy to talk Flutter, Swift, Next.js and backend design.
               </p>
 
               <div className="grid grid-cols-2 gap-6">
@@ -889,7 +901,7 @@ export default function FlutterPortfolio() {
                               Current
                             </Badge>
                           </div>
-                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">02/2026 – Present</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">01/2026 – Present</div>
                         </div>
                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
                           Full Stack Developer
@@ -934,7 +946,7 @@ export default function FlutterPortfolio() {
                               Previous
                             </Badge>
                           </div>
-                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">11/2023 - 08/2025</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">11/2023 – 07/2025</div>
                         </div>
                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
                           Senior Flutter Developer
@@ -1019,7 +1031,7 @@ export default function FlutterPortfolio() {
                               Previous
                             </Badge>
                           </div>
-                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">9/2022 - 4/2023</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">09/2022 – 04/2023</div>
                         </div>
                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
                           Junior Flutter Developer
@@ -1063,13 +1075,13 @@ export default function FlutterPortfolio() {
                               Previous
                             </Badge>
                           </div>
-                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">04/2021 - 9/2022</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">04/2021 – 08/2022</div>
                         </div>
                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
                           Junior Flutter Developer
                         </h3>
                         <p className="text-orange-600 dark:text-orange-400 font-semibold text-lg mb-2">
-                          TechPlusSolution
+                          TechPlusSolutions
                         </p>
                         <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
                           <span className="inline-block w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
@@ -1089,6 +1101,111 @@ export default function FlutterPortfolio() {
         </div>
       </section>
 
+
+      {/* Currently Learning Section */}
+      <section id="learning" className="py-20 bg-gray-50 dark:bg-gray-800" data-animate>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`text-center mb-16 ${visibleElements.has("learning") ? "animate-fade-in-up" : "opacity-0"}`}>
+            <div className="inline-flex items-center justify-center p-3 mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl">
+              <GraduationCap className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Currently Learning</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Working through mathematics, machine learning, and paper reading so I can understand, reproduce, and
+              eventually write AI research papers.
+            </p>
+            <p className="text-base text-gray-500 dark:text-gray-400 max-w-3xl mx-auto mt-4">
+              <span className="font-semibold text-gray-700 dark:text-gray-200">12–18 months, 8–10 hrs/week.</span>{" "}
+              One course + one maths topic + one paper + one project at a time — no collecting certificates.
+            </p>
+          </div>
+
+          {/* Progress Badges */}
+          <div
+            className={`flex flex-wrap justify-center gap-3 mb-12 ${
+              visibleElements.has("learning") ? "animate-fade-in-up" : "opacity-0"
+            }`}
+          >
+            {[
+              { label: "Maths for Computer Science — Modules 1–2 of 4", done: true },
+              { label: "Practice assignments — 6 passed · avg 98%", done: true },
+              { label: "AI For Everyone — Just started", done: false },
+              { label: "Research Paper Assistant — In progress", done: false },
+            ].map((badge, index) => (
+              <Badge
+                key={index}
+                variant="secondary"
+                className={`text-sm px-4 py-2 hover:scale-105 transition-transform duration-200 ${
+                  badge.done
+                    ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"
+                    : "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300"
+                }`}
+              >
+                {badge.label}
+              </Badge>
+            ))}
+          </div>
+
+          {/* Track Cards */}
+          <div className="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+            {[
+              {
+                icon: Brain,
+                color: "blue",
+                track: "Mathematics",
+                topic: "Module 2 — operations with binary numbers, number representation",
+              },
+              {
+                icon: BookOpen,
+                color: "purple",
+                track: "AI Course",
+                topic: "AI For Everyone",
+              },
+              {
+                icon: Target,
+                color: "green",
+                track: "Project",
+                topic: "Research Paper Assistant — defining the first useful version",
+              },
+            ].map((item, index) => (
+              <Card
+                key={index}
+                className={`bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300 hover:scale-105 ${
+                  visibleElements.has("learning") ? "animate-fade-in-up" : "opacity-0"
+                }`}
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
+                <CardContent className="p-6">
+                  <div className={`inline-flex p-3 mb-4 bg-${item.color}-100 dark:bg-${item.color}-900/30 rounded-lg`}>
+                    <item.icon className={`h-6 w-6 text-${item.color}-600 dark:text-${item.color}-400`} />
+                  </div>
+                  <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
+                    {item.track}
+                  </h4>
+                  <p className="text-gray-800 dark:text-gray-200 leading-relaxed">{item.topic}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Up Next */}
+          <div
+            className={`max-w-3xl mx-auto ${visibleElements.has("learning") ? "animate-fade-in-up" : "opacity-0"}`}
+          >
+            <div className="flex items-start sm:items-center gap-4 p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+              <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg shrink-0">
+                <TrendingUp className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Up next</h4>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Sequences and series · Machine Learning Specialization · first paper summaries.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-white dark:bg-gray-900" data-animate>
@@ -1391,10 +1508,10 @@ export default function FlutterPortfolio() {
               ))}
             </div>
             <p className="text-gray-400 mb-4">
-              © 2024 Aung Myo Paing. All rights reserved. Built with Next.js and Tailwind CSS.
+              © 2026 Aung Myo Paing. All rights reserved. Built with Next.js and Tailwind CSS.
             </p>
             <p className="text-gray-500 text-sm">
-              Crafting exceptional mobile experiences, one line of code at a time.
+              Building thoughtful software across mobile, web and backend — one line of code at a time.
             </p>
           </div>
         </div>
