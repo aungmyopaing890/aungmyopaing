@@ -986,31 +986,32 @@ export default function FlutterPortfolio() {
       </section>
 
       {/* Tech Stack Section */}
-      <section id="skills" className="py-20 bg-white dark:bg-gray-900" data-animate>
+      <section id="skills" className="py-12 md:py-16 bg-white dark:bg-gray-900" data-animate>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"}`}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Tech Stack</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <div className={`text-center mb-8 ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"}`}>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">Tech Stack</h2>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Technologies and tools I use to build robust, scalable solutions
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 max-w-6xl mx-auto">
             {techStack.map((tech, index) => (
               <div
                 key={index}
-                className={`group bg-gray-800 dark:bg-gray-900 border border-gray-700 dark:border-gray-600 rounded-lg p-6 text-center hover:scale-105 transition-all duration-300 hover:shadow-lg ${visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"
-                  }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`group bg-gray-50 dark:bg-gray-800/60 border border-gray-200/80 dark:border-gray-700/60 rounded-xl p-3 text-center hover:scale-105 hover:bg-white dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200 shadow-2xs hover:shadow-xs ${
+                  visibleElements.has("skills") ? "animate-fade-in-up" : "opacity-0"
+                }`}
+                style={{ animationDelay: `${index * 0.04}s` }}
               >
-                <div className="mb-3 flex justify-center">
+                <div className="mb-2 flex justify-center">
                   <img
                     src={tech.logo}
                     alt={tech.name}
-                    className="h-10 w-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                    className="h-7 w-7 object-contain group-hover:scale-110 transition-transform duration-200"
                   />
                 </div>
-                <div className="text-sm text-gray-300 dark:text-gray-400 font-medium">{tech.name}</div>
+                <div className="text-xs text-gray-700 dark:text-gray-300 font-medium truncate">{tech.name}</div>
               </div>
             ))}
           </div>
