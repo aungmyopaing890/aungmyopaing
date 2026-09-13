@@ -32,6 +32,9 @@ import {
   Brain,
   Target,
   TrendingUp,
+  Cpu,
+  Layers,
+  Bot,
 } from "lucide-react"
 
 export default function FlutterPortfolio() {
@@ -782,10 +785,10 @@ export default function FlutterPortfolio() {
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                 I care about clean architecture, state management (BLoC, Riverpod, Provider) and performance — 60fps UI,
-                efficient memory, and code that stays maintainable as it scales. Alongside that I'm studying mathematics
-                and AI research in a structured way, currently Mathematics for Computer Science and AI For Everyone,
-                working towards reading and reproducing machine learning papers. I enjoy solving complex problems through
-                code, and I'm always happy to talk Flutter, Swift, Next.js and backend design.
+                efficient memory, and code that stays maintainable as it scales. Alongside full-stack development, I study
+                higher mathematics and artificial intelligence foundations from first principles — focusing on algebraic
+                structures, proofs, and hands-on implementations in LLM tokenizers, transformer mechanics, multi-agent systems,
+                and physical computing.
               </p>
 
               <div className="grid grid-cols-2 gap-6">
@@ -1135,12 +1138,11 @@ export default function FlutterPortfolio() {
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Currently Learning</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Working through mathematics, machine learning, and paper reading so I can understand, reproduce, and
-              eventually write AI research papers.
+              Studying higher mathematics and engineering foundations in artificial intelligence from first principles.
             </p>
             <p className="text-base text-gray-500 dark:text-gray-400 max-w-3xl mx-auto mt-4">
-              <span className="font-semibold text-gray-700 dark:text-gray-200">12–18 months, 8–10 hrs/week.</span>{" "}
-              One course + one maths topic + one paper + one project at a time — no collecting certificates.
+              <span className="font-semibold text-gray-700 dark:text-gray-200">Depth over breadth.</span>{" "}
+              One primary mathematical topic paired with hands-on technical exploration.
             </p>
           </div>
 
@@ -1151,62 +1153,87 @@ export default function FlutterPortfolio() {
             }`}
           >
             {[
-              { label: "Maths for Computer Science — Modules 1–2 of 4", done: true },
-              { label: "Practice assignments — 6 passed · avg 98%", done: true },
-              { label: "AI For Everyone — Just started", done: false },
-              { label: "Research Paper Assistant — In progress", done: false },
+              { label: "Mathematics for AI", status: "In Progress", color: "blue" },
+              { label: "LLM Pretraining Engineering", status: "Just Started", color: "amber" },
+              { label: "Multi-Agent Systems", status: "Just Started", color: "amber" },
+              { label: "Physical Computing & IoT", status: "Just Started", color: "amber" },
             ].map((badge, index) => (
               <Badge
                 key={index}
-                variant="secondary"
+                variant="outline"
                 className={`text-sm px-4 py-2 hover:scale-105 transition-transform duration-200 ${
-                  badge.done
-                    ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"
-                    : "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300"
+                  badge.color === "blue"
+                    ? "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800"
+                    : "bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-800"
                 }`}
               >
-                {badge.label}
+                {badge.label} · <span className="font-semibold ml-1">{badge.status}</span>
               </Badge>
             ))}
           </div>
 
           {/* Track Cards */}
-          <div className="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
             {[
               {
                 icon: Brain,
-                color: "blue",
-                track: "Mathematics",
-                topic: "Module 2 — operations with binary numbers, number representation",
+                iconBg: "bg-blue-100 dark:bg-blue-900/30",
+                iconColor: "text-blue-600 dark:text-blue-400",
+                track: "Mathematics for AI",
+                stage: "In Progress",
+                stageColor: "bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300",
+                topic: "Functions, transformations, algebraic foundations, and analytical hand proofs.",
               },
               {
-                icon: BookOpen,
-                color: "purple",
-                track: "AI Course",
-                topic: "AI For Everyone",
+                icon: Layers,
+                iconBg: "bg-purple-100 dark:bg-purple-900/30",
+                iconColor: "text-purple-600 dark:text-purple-400",
+                track: "LLM Pretraining",
+                stage: "Just Started",
+                stageColor: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
+                topic: "Building BPE tokenizers from scratch, transformer attention, and PyTorch ops.",
               },
               {
-                icon: Target,
-                color: "green",
-                track: "Project",
-                topic: "Research Paper Assistant — defining the first useful version",
+                icon: Bot,
+                iconBg: "bg-green-100 dark:bg-green-900/30",
+                iconColor: "text-green-600 dark:text-green-400",
+                track: "Multi-Agent Systems",
+                stage: "Just Started",
+                stageColor: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
+                topic: "Designing agent workflows, state machine graphs, and tool orchestration with LangGraph.",
+              },
+              {
+                icon: Cpu,
+                iconBg: "bg-amber-100 dark:bg-amber-900/30",
+                iconColor: "text-amber-600 dark:text-amber-400",
+                track: "Physical Computing & IoT",
+                stage: "Just Started",
+                stageColor: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
+                topic: "Arduino Uno hardware, basic circuits, and Python serial data logging.",
               },
             ].map((item, index) => (
               <Card
                 key={index}
-                className={`bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300 hover:scale-105 ${
+                className={`bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 hover-lift transition-all duration-300 hover:scale-105 flex flex-col justify-between ${
                   visibleElements.has("learning") ? "animate-fade-in-up" : "opacity-0"
                 }`}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <CardContent className="p-6">
-                  <div className={`inline-flex p-3 mb-4 bg-${item.color}-100 dark:bg-${item.color}-900/30 rounded-lg`}>
-                    <item.icon className={`h-6 w-6 text-${item.color}-600 dark:text-${item.color}-400`} />
+                <CardContent className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`inline-flex p-3 ${item.iconBg} rounded-lg`}>
+                        <item.icon className={`h-6 w-6 ${item.iconColor}`} />
+                      </div>
+                      <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${item.stageColor}`}>
+                        {item.stage}
+                      </span>
+                    </div>
+                    <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
+                      {item.track}
+                    </h4>
                   </div>
-                  <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
-                    {item.track}
-                  </h4>
-                  <p className="text-gray-800 dark:text-gray-200 leading-relaxed">{item.topic}</p>
+                  <p className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed mt-2">{item.topic}</p>
                 </CardContent>
               </Card>
             ))}
@@ -1223,7 +1250,7 @@ export default function FlutterPortfolio() {
               <div>
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Up next</h4>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Sequences and series · Machine Learning Specialization · first paper summaries.
+                  Linear algebra & multivariate calculus · PyTorch transformer training loops · multi-agent benchmark workflows.
                 </p>
               </div>
             </div>
